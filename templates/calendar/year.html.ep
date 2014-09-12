@@ -1,33 +1,42 @@
 % layout 'default';
 % title 'Welcome';
 
-YEAR <%= $year %>
+%= stylesheet "/assets/css/calendar.min.css"
+
+<div class="page-header">
+<h3>YEAR <%= $year %></h3>
+</div>
 
 % if ($calendar) {
-<table class="calendar">
-<tr>
-    <th>Mon</th>
-    <th>Tue</th>
-    <th>Wed</th>
-    <th>Thu</th>
-    <th>Fri</th>
-    <th>Sat</th>
-    <th>Sun</th>
-</tr>
-
-% foreach my $span (@$calendar) {
-    <tr>
-        <% foreach my $day (@$span) { %>
-        <th>
-            <% if ($day and grep { $day == $_ } @$available_days) { %>
-            <%= link_to $day => "/calendar/$year/$day/" %>
-            <% } else { %>
-            <%= $day %>
+<div class="row">
+    <div class="cal-row-fluid cal-row-head">
+        <div class="cal-cell1">Mon</div>
+        <div class="cal-cell1">Tue</div>
+        <div class="cal-cell1">Wed</div>
+        <div class="cal-cell1">Thu</div>
+        <div class="cal-cell1">Fri</div>
+        <div class="cal-cell1">Sat</div>
+        <div class="cal-cell1">Sun</div>
+    </div>
+    <div class="cal-month-box">
+    % foreach my $span (@$calendar) {
+        <div class="cal-row-fluid">
+            <% foreach my $day (@$span) { %>
+            <div class="cal-cell1 cal-cell">
+                <div class="cal-month-day cal-day-inmonth">
+                    <span data-cal-date="" class="pull-right">
+                <% if ($day and grep { $day == $_ } @$available_days) { %>
+                <%= link_to $day => "/calendar/$year/$day/" %>
+                <% } else { %>
+                <%= $day %>
+                <% } %>
+                    </span>
+                </div>
+            </div>
             <% } %>
-        </th>
-        <% } %>
-    </tr>
-% }
-</table>
+        </div>
+    % }
+    </div>
+</div>
 
 % } # for if $calendar
