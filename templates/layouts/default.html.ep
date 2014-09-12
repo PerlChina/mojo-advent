@@ -1,5 +1,5 @@
 <!DOCTYPE html>
 <html>
-  <head><title><%= title %></title></head>
+  <head><title><%= title %> - PerlChina Advent</title></head>
   <body><%= content %></body>
 </html>
