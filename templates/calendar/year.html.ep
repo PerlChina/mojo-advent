@@ -19,7 +19,7 @@ YEAR <%= $year %>
     <tr>
         <% foreach my $day (@$span) { %>
         <th>
-            <% if (grep { $day == $_ } @$available_days) { %>
+            <% if ($day and grep { $day == $_ } @$available_days) { %>
             <%= link_to $day => "/calendar/$year/$day/" %>
             <% } else { %>
             <%= $day %>

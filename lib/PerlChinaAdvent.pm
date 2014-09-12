@@ -13,10 +13,10 @@ sub startup {
     $r->get('/')->to('calendar#index');
     $r->get('/calendar/')->to('calendar#index');
 
-    my $r_year = $r->get('/calendar/:year');
+    my $r_year = $r->get('/calendar/:year' => [year => qr/\d+/]);
 
     $r_year->get('/')->to('calendar#year');
-    $r_year->get('/:day')->to('calendar#entry');
+    $r_year->get('/:day' => [day => qr/\d+/])->to('calendar#entry');
 }
 
 1;
