@@ -5,6 +5,8 @@ use Mojo::Base 'Mojolicious';
 sub startup {
     my $c = shift;
 
+    $c->plugin('TagHelpers');
+
     my $r = $c->routes;
 
     $r->get('/')->to('calendar#index');

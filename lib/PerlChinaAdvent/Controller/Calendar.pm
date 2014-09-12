@@ -1,7 +1,8 @@
 package PerlChinaAdvent::Controller::Calendar;
 
 use Mojo::Base 'Mojolicious::Controller';
-use PerlChinaAdvent::Entry qw/get_day_file render_pod/;
+use PerlChinaAdvent::Entry qw/get_day_file get_available_days get_current_year render_pod/;
+use Calendar::Simple;
 
 sub index {
     my $c = shift;
@@ -11,6 +12,13 @@ sub index {
 sub year {
     my $c = shift;
 
+    my $year = $c->stash('year');
+    my $current_year = get_current_year();
+    if ($year < $current_year) {
+        my @days = get_available_days($year);
+        $c->stash('available_days', \@days);
+        $c->stash('calendar', scalar calendar(12, $year, 1));
+    }
 }
 
 sub entry {

@@ -5,7 +5,7 @@ use warnings;
 use v5.10;
 use base 'Exporter';
 use vars qw/@EXPORT_OK/;
-@EXPORT_OK = qw/get_day_file get_available_years render_pod/;
+@EXPORT_OK = qw/get_day_file get_available_years get_available_days render_pod get_current_year/;
 
 use Pod::Advent;
 
@@ -32,6 +32,15 @@ sub get_available_years {
     return @years;
 }
 
+sub get_available_days {
+    my ($year) = @_;
+
+    opendir(my $dir, "$root_path/articles/$year") or return;
+    my @days = grep { /^\d{1,2}$/ } readdir($dir);
+    closedir($dir);
+    return @days;
+}
+
 sub render_pod {
     my ($file) = @_;
 
@@ -42,6 +51,11 @@ sub render_pod {
     $advent->output_string( \$out );
     $advent->parse_file($file);
     return $out;
+}
+
+## Date related
+sub get_current_year {
+    return (localtime())[5] + 1900;
 }
 
 1;
