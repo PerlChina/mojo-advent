@@ -1,4 +1,13 @@
 % layout 'default';
 % title 'Welcome';
 
+%= t "ul" => begin
+%= t "li" => begin
+%= link_to "Home" => "/"
+%= end
+%= t "li" => begin
+%= link_to $year => "/calendar/$year/"
+%= end
+%= end
+
 %= b($pod_html)
