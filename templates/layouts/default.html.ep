@@ -1,13 +1,51 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
     <title><%= title %> - PerlChina Advent</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     %= stylesheet "/assets/css/bootstrap.min.css"
   </head>
   <body>
+
+<header class="navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">PerlChina Advent</a>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Archive <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            % foreach my $y (@$all_years) {
+            %= t "li" => begin
+            %= link_to $y => "/calendar/$y/"
+            % end
+            % }
+          </ul>
+        </li>
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://github.com/PerlChina/mojo-advent">Fork on Github</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
     <div class="container">
     <%= content %>
     </div>
+
+    %= javascript "/assets/js/jquery.min.js"
+    %= javascript "/assets/js/bootstrap.min.js"
   </body>
 </html>

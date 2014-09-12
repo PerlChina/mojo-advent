@@ -1,13 +1,10 @@
 % layout 'default';
 % title 'Welcome';
 
-%= t "ul" => begin
-%= t "li" => begin
-%= link_to "Home" => "/"
-%= end
-%= t "li" => begin
-%= link_to $year => "/calendar/$year/"
-%= end
-%= end
+<ol class="breadcrumb">
+  <li><%= link_to "Home" => "/" %></li>
+  <li><%= link_to $year => "/calendar/$year/" %></li>
+  <li class="active">FIXME TITLE</li>
+</ol>
 
 %= b($pod_html)

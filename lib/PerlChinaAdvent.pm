@@ -1,12 +1,21 @@
 package PerlChinaAdvent;
 
 use Mojo::Base 'Mojolicious';
+use PerlChinaAdvent::Entry qw/get_available_years/;
 
 sub startup {
     my $c = shift;
 
     $c->plugin('DefaultHelpers');
     $c->plugin('TagHelpers');
+
+    # header
+    $c->hook(before_dispatch => sub {
+        my $c = shift;
+
+        my @years = get_available_years();
+        $c->stash(all_years => \@years);
+    });
 
     my $r = $c->routes;
 
