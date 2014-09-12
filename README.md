@@ -1,4 +1,4 @@
-mojo-advent
+PerlChina Advent
 ===========
 
 ## INSTALL 安装指南
@@ -12,7 +12,7 @@ mojo-advent
  * cpanm --installdeps .
  * perl script/perl_china_advent daemon
 
-然后使用浏览器访问 [http://127.0.0.1:3000/]
+然后使用浏览器访问 <http://127.0.0.1:3000/>
 
 ## OTHERS
 
