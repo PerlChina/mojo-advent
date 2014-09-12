@@ -1,0 +1,9 @@
+{
+  "name": "PerlChina Advent",
+  "description": "advent server for PerlChina",
+  "logo": "http://st.pimg.net/perlweb/images/camel_head.v25e738a.png",
+  "keywords": ["perl", "advent", "perlchina"],
+  "env": {
+    "BUILDPACK_URL": "https://github.com/miyagawa/heroku-buildpack-perl"
+  }
+}
