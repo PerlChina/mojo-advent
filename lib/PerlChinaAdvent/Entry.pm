@@ -5,7 +5,7 @@ use warnings;
 use v5.10;
 use base 'Exporter';
 use vars qw/@EXPORT_OK/;
-@EXPORT_OK = qw/get_day_file render_pod/;
+@EXPORT_OK = qw/get_day_file get_available_years render_pod/;
 
 use Pod::Advent;
 
@@ -23,6 +23,13 @@ sub get_day_file {
     closedir($dir);
     warn " #[FIX] More than one file in $root_path/articles/$year/$day.\n" if @files > 1;
     return "$root_path/articles/$year/$day/" . $files[0];
+}
+
+sub get_available_years {
+    opendir(my $dir, "$root_path/articles");
+    my @years = grep { /^20\d{2}$/ } readdir($dir);
+    closedir($dir);
+    return @years;
 }
 
 sub render_pod {
