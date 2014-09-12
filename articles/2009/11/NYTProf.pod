@@ -41,11 +41,11 @@ $ nytprofhtml
 
 然后你就可以打开 nytprof/index.html 了
 
-<img src='NYTProf1.jpg' />
+<img src='/assets/2009/NYTProf1.jpg' />
 
 如果点 t.pl 左边的 line, 你能清楚地看到哪一行是比较慢的。
 
-<img src='NYTProf2.jpg' />
+<img src='/assets/2009/NYTProf2.jpg' />
 
 如上脚本只是为了简单介绍，实际中的应该比这复杂多了。但是方法还是一样的。
 

@@ -44,4 +44,4 @@ GraphViz::DBI 是一个基于 GraphViz 的模块，目标是用来进行数据�
 
 欢迎尝试其他数据库，效果应该还不错 :)
 
-<img src='db-layout-graphviz.png' border='0' />
+<img src='/assets/2011/db-layout-graphviz.png' border='0' />
