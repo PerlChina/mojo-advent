@@ -15,6 +15,9 @@ sub startup {
 
         my @years = get_available_years();
         $c->stash(all_years => \@years);
+
+        my $is_disqus_on = 0;
+        $c->stash(is_disqus_on => $is_disqus_on);
     });
 
     my $r = $c->routes;
