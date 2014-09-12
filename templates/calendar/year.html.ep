@@ -10,13 +10,13 @@
 % if ($calendar) {
 <div class="row">
     <div class="cal-row-fluid cal-row-head">
-        <div class="cal-cell1">Mon</div>
-        <div class="cal-cell1">Tue</div>
-        <div class="cal-cell1">Wed</div>
-        <div class="cal-cell1">Thu</div>
-        <div class="cal-cell1">Fri</div>
-        <div class="cal-cell1">Sat</div>
-        <div class="cal-cell1">Sun</div>
+        <div class="cal-cell1">星期一</div>
+        <div class="cal-cell1">星期二</div>
+        <div class="cal-cell1">星期三</div>
+        <div class="cal-cell1">星期四</div>
+        <div class="cal-cell1">星期五</div>
+        <div class="cal-cell1">星期六</div>
+        <div class="cal-cell1">星期日</div>
     </div>
     <div class="cal-month-box">
     % foreach my $span (@$calendar) {
