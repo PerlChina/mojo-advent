@@ -1,4 +1,4 @@
-Lingua::Identify::CLD
+# Lingua::Identify::CLD
 ======
 
 [Lingua::Identify::CLD](https://metacpan.org/pod/Lingua::Identify::CLD) 使用 Chrome 的语言识别功能来得到文字或者网页的语言。
@@ -13,8 +13,8 @@ my $cld = Lingua::Identify::CLD->new();
 my @lang = $cld->identify("Text"); # 'ENGLISH', 'en', 100, 1
 ```
 
-命令行
-=======
+## 命令行
+---------
 
 *identify-cld*
 
@@ -23,6 +23,6 @@ my @lang = $cld->identify("Text"); # 'ENGLISH', 'en', 100, 1
 STDIN: CHINESE
 ```
 
-作者
-=======
+## 作者
+---------
 [Fayland Lam](http://fayland.me/)
