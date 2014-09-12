@@ -1,0 +1,49 @@
+=for advent_year 2011
+
+=for advent_day 19
+
+=for advent_title Music::Chord::Note
+
+=for advent_author Joe Jiang
+
+对于喜欢乐器的人来说，常常需要了解和弦，但是如果小时候没有好好学习乐理，就会觉得十分遗憾。
+
+有了 M<Music::Chord::Note> 这个模块，就能解决许多人的燃眉之急。
+
+好比你手上有个用键盘播放音乐的软件（我用过 Real Guitar A<http://www.musiclab.com/products/realgtr_info.htm>），你摸索着很快就能弹奏最简单的和弦了（比如 C D G）。但是对于那些复杂的，需要组合多个和弦才能演奏出来的呢（比如 C#m Cm7）？一个一个组合的摸索就变得非常麻烦，这时候你需要的就是有个脚本来帮你列出隐藏在和弦背后的组合。
+
+安装了 Music::Chord::Note 的话，你就可以这样做：
+
+=begin code
+
+    % perl -MMusic::Chord::Note -le 'print join qq(, ), Music::Chord::Note->new->chord(shift)' Cm7
+    C, D#, G, A#
+
+=end code
+
+这样看来，只要找到键盘上 C 和 D# 对应的键位就可以近似的演奏出 Cm7 了，如果不行，再同时按下 G 就行了，如果你能再加上 A#，四个键同时按就十分完美了。
+
+而 D# 就是一个过度音，它的音调应该等同于 Eb，这点可以用另一个方法来证实：
+
+=begin code
+
+    % perl -MMusic::Chord::Note -le 'print Music::Chord::Note->new->scale(shift)' Eb
+    3
+
+    % perl -MMusic::Chord::Note -le 'print Music::Chord::Note->new->scale(shift)' D#
+    3
+
+=end code
+
+这样，你就可以更进一步，立即享受演奏复杂和弦的乐趣了。感谢作者 Dai Okabayashi！
+
+MetaCPAN link A<https://metacpan.org/module/Music::Chord::Note>
+
+最后附上简单的和弦音调列表：
+
+=begin code
+
+    %  perl -MMusic::Chord::Note -le '$cn = Music::Chord::Note->new; print join qq(, ), map { $cn->scale($_) } qw(C Db D Eb E F Gb G A Bb B)'
+    0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11
+
+=end code

@@ -1,0 +1,37 @@
+=for advent_year 2011
+
+=for advent_day 20
+
+=for advent_title Unicode::Tussle
+
+=for advent_author Joe Jiang
+
+Unicode 类的模块非常多，M<Unicode::Tussle> 是其中一个集大成者，作者是 brain d foy。它的主要作用非常简单，就是输出一些有用的脚本。这里介绍其中一个叫做 unichars 的脚本，能列出合乎 Unicode 属性的字符。
+
+尝试的话请最好用比较自动化的 CPAN 安装工具，因为这个模块的依赖性比较强。可以参考去年的 Advent 的第一天，了解 cpanm 的安装和使用。另外这个脚本需要 Perl 14 以上版本才能测试通过，所以可以参考去年 Advent 的第四天，了解 perlbrew 的使用。
+
+有了这个脚本，你就可以这样列出所有的中文字符：
+
+=begin pre
+
+    % unichars -ua '\p{Han}' | head -3
+     ⺀ U+02E80 CJK RADICAL REPEAT
+     ⺁ U+02E81 CJK RADICAL CLIFF
+     ⺂ U+02E82 CJK RADICAL SECOND ONE
+
+=end pre
+
+另外还有一个脚本也非常有用，可以用来列出某个字符的其他 Unicode 属性，名叫 uniprops：
+
+=begin pre
+
+    % uniprops 汉
+    U+6C49 ‹汉› \N{U+6C49}
+        \w \pL \p{L_} \p{Lo}
+        All Any Alnum Alpha Alphabetic Assigned InCJK_UnifiedIdeographs CJK_Unified_Ideographs L Lo Gr_Base Grapheme_Base Graph
+           GrBase Han Hani ID_Continue IDC ID_Start IDS Ideo Ideographic Letter L_ Other_Letter Print UIdeo Unified_Ideograph Word
+           XID_Continue XIDC XID_Start XIDS
+
+=end pre
+
+还有其他的一些有用脚本，请自行查看手册逐一测试。相关博客：A<http://www.effectiveperlprogramming.com/blog/1232>
