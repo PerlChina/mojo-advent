@@ -2,8 +2,14 @@
 % title 'Welcome';
 <h2>To be continued...</h2>
 
-<p>Sample page:
-<a href='/calendar/2009/01/'>Sample POD</a></p>
+%= t "h3" => "Archive"
+%= t "ul" => begin
+% foreach my $y (@$years) {
+%= t "li" => begin
+%= link_to $y => "/calendar/$y/"
+% end
+% }
+% end
 
 <p>Please fork <a href='https://github.com/PerlChina/mojo-advent'>https://github.com/PerlChina/mojo-advent</a> and send us pull requests!</p>
 

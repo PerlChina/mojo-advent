@@ -5,6 +5,7 @@ use Mojo::Base 'Mojolicious';
 sub startup {
     my $c = shift;
 
+    $c->plugin('DefaultHelpers');
     $c->plugin('TagHelpers');
 
     my $r = $c->routes;

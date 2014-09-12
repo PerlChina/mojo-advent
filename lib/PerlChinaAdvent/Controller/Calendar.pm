@@ -1,12 +1,14 @@
 package PerlChinaAdvent::Controller::Calendar;
 
 use Mojo::Base 'Mojolicious::Controller';
-use PerlChinaAdvent::Entry qw/get_day_file get_available_days get_current_year render_pod/;
+use PerlChinaAdvent::Entry qw/get_day_file get_available_years get_available_days get_current_year render_pod/;
 use Calendar::Simple;
 
 sub index {
     my $c = shift;
 
+    my @years = get_available_years();
+    $c->stash(years => \@years);
 }
 
 sub year {
