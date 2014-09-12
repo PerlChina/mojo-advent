@@ -2,9 +2,12 @@ package PerlChinaAdvent::Entry;
 
 use strict;
 use warnings;
+use v5.10;
 use base 'Exporter';
 use vars qw/@EXPORT_OK/;
-@EXPORT_OK = qw/get_day_file/;
+@EXPORT_OK = qw/get_day_file render_pod/;
+
+use Pod::Advent;
 
 use File::Spec;
 use Cwd qw/abs_path/;
@@ -20,6 +23,18 @@ sub get_day_file {
     closedir($dir);
     warn " #[FIX] More than one file in $root_path/articles/$year/$day.\n" if @files > 1;
     return "$root_path/articles/$year/$day/" . $files[0];
+}
+
+sub render_pod {
+    my ($file) = @_;
+
+    state $advent = Pod::Advent->new;
+    $Pod::Advent::BODY_ONLY = 1;
+
+    my $out = '';
+    $advent->output_string( \$out );
+    $advent->parse_file($file);
+    return $out;
 }
 
 1;
