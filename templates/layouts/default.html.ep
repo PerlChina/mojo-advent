@@ -23,7 +23,7 @@
       <ul class="nav navbar-nav">
 
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Archive <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">归档 <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             % foreach my $y (@$all_years) {
             %= t "li" => begin
