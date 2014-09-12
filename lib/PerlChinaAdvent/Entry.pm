@@ -29,7 +29,7 @@ sub get_available_years {
     opendir(my $dir, "$root_path/articles");
     my @years = grep { /^20\d{2}$/ } readdir($dir);
     closedir($dir);
-    return @years;
+    return sort @years;
 }
 
 sub get_available_days {
