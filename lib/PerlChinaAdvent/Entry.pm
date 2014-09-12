@@ -28,7 +28,7 @@ sub get_day_file {
 sub render_pod {
     my ($file) = @_;
 
-    state $advent = Pod::Advent->new;
+    my $advent = Pod::Advent->new;
     $Pod::Advent::BODY_ONLY = 1;
 
     my $out = '';
