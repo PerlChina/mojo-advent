@@ -7,7 +7,7 @@ use base 'Exporter';
 use vars qw/@EXPORT_OK/;
 @EXPORT_OK = qw/get_day_file get_available_years get_available_days render_pod get_current_year/;
 
-use Pod::Advent;
+use LocalPodAdvent;
 
 use File::Spec;
 use Cwd qw/abs_path/;
@@ -43,14 +43,9 @@ sub get_available_days {
 
 sub render_pod {
     my ($file) = @_;
-
-    my $advent = Pod::Advent->new;
-    $Pod::Advent::BODY_ONLY = 1;
-
-    my $out = '';
-    $advent->output_string( \$out );
-    $advent->parse_file($file);
-    return $out;
+    my $advent = LocalPodAdvent->new;
+    my $result = $advent->parse_file($file);
+    return $result;
 }
 
 ## Date related

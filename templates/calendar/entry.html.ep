@@ -1,13 +1,13 @@
-% layout 'default';
-% title 'Welcome';
+% my $advent_title = $pod_data->{advent_title};
+% layout 'default', title $advent_title;
 
 <ol class="breadcrumb">
   <li><%= link_to "Home" => "/" %></li>
   <li><%= link_to $year => "/calendar/$year/" %></li>
-  <li class="active">FIXME TITLE</li>
+  <li class="active"><%= link_to "/calendar/$year/$day" => begin %><%= $advent_title %><% end %></li>
 </ol>
 
-%= b($pod_html)
+%= b($pod_data->{body})
 
 % if ($is_disqus_on) {
 <div id="disqus_thread"></div>

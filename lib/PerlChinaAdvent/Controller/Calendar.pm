@@ -35,8 +35,8 @@ sub entry {
         );
     }
 
-    my $html = render_pod($file);
-    $c->stash('pod_html' => $html);
+    my $result = render_pod($file);
+    $c->stash('pod_data' => $result);
 }
 
 1;

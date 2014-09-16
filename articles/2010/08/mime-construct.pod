@@ -2,7 +2,7 @@
 
 =for advent_day 8
 
-=for mime-construct and MIME::Lite::HTML
+=for advent_title mime-construct and MIME::Lite::HTML
 
 =for advent_author Joe Jiang
 
