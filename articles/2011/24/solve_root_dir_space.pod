@@ -6,6 +6,8 @@
 
 =for advent_author Joe Jiang
 
+=encoding utf8
+
 如果说 Windows 系统有 DLL 地狱的话，看上去无限美好的 CPAN 其实也有 Dependency 问题，如果你试过安装高依赖性模块应该深有体会。
 
 对于 Unix 系统管理员来说，文件系统的挂接点如果不好好规划，也会有一个目录树挂载地狱。

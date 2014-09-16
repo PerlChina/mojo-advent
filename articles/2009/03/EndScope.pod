@@ -6,6 +6,8 @@
 
 =for advent_author Fayland Lam
 
+=encoding utf8
+
 CPAN 上有很多支持在 scope 结束后运行某些代码，其中最常用的是 M<Scope::Guard> 和 M<B::Hooks::EndOfScope>
 
 M<Scope::Guard> 采用最常见的 B<DESTROY> 方法。Scope::Guard 可以通过 dismiss 来取消。

@@ -6,6 +6,8 @@
 
 =for advent_author Fayland Lam
 
+=encoding utf8
+
 M<WWW::Mechanize::Firefox> 是个非常强大的工具。
 
 第一步是安装。安装该模块之前，需要安装一个 firefox 的 A<https://addons.mozilla.org/en-US/firefox/addon/mozrepl/|mozrepl> addon. Install 完毕后，重启然后启动 MozRepl (Tools -> MozRepl -> Start), 然后 cpan WWW::Mechanize::Firefox, 在安装的过程中，你可以看着 firefox, 你会发现它不停的打开 tab 然后做些测试，关掉 tab。如果某些 tests fail, 你可以 force install 该模块。

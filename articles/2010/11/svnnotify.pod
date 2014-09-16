@@ -6,6 +6,8 @@
 
 =for advent_author Fayland Lam
 
+=encoding utf8
+
 有人喜欢 git，也有人喜欢 svn。口味不同而已。虽然 git 很棒，但是 svn 也是很不错的。
 
 我个人有个特殊的喜好，喜欢跟踪每个 commit 的变化。看看 code 最近加了啥，是不是有些变动我可以借鉴一下。这在跟踪某个项目的进程时非常管用。比如你是项目的主管，比如你想将所有的变动发送到一个 mailing list 中，我们都可以用 M<svnnotify> 来满足这些需求。

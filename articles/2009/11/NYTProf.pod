@@ -6,6 +6,8 @@
 
 =for advent_author Fayland Lam
 
+=encoding utf8
+
 当您有个程序运行得特别慢而无法找到为什么的时候，Profile 当是第一选择（Profile 应当永远在优化之前）。而在 CPAN 众多 Profile 模块中，A<Devel::NYTProf> 当属第一。
 
 比如你有一个简单的 pl 文件

@@ -6,6 +6,8 @@
 
 =for advent_author Fayland Lam
 
+=encoding utf8
+
 在国内混，爬墙是必备技能。爬墙有很多种，SSH Tunnel, VPN, Tor 等。如果仅仅是个人使用的话，SSH Tunnel 或者 VPN 都是不错的选择，速度够快，但是可能不免费。Tor 是一个免费的选择，虽然有时候可能有点慢。
 
 如果要做爬虫工具的话，Tor 将是一个必备选择。虽然有时候它不稳定或者某些网站不欢迎它，但是大部分情况下，它都可以很好的工作。

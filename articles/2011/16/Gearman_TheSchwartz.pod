@@ -6,6 +6,8 @@
 
 =for advent_author Fayland Lam
 
+=encoding utf8
+
 A<http://search.cpan.org/dist/Gearman/|Gearman> 和 M<TheSchwartz> 是著名 Perl 公司 Six Apart （Danga 已被 Six Apart 收购）的作品。
 
 这里我们不详细贴示例代码了，因为 perldoc 和网上搜索的例子都有一大把。

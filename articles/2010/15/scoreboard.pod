@@ -6,6 +6,8 @@
 
 =for advent_author cnhackTNT 
 
+=encoding utf8
+
 多进程的问题之一是如何汇总各个进程当前的的状态，就像 Apache 服务器的 I<mod_status> 模块所实现的功能那样。
 
 首先浮现在脑海中的方法可能是通过管道或者共享变量，这些方法要么需要锁，要么相对太复杂。

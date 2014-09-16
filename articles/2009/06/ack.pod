@@ -6,6 +6,8 @@
 
 =for advent_author Fayland Lam
 
+=encoding utf8
+
 A<ack> 类似 grep, 能做 99% grep 做的事情。
 
 =begin pre

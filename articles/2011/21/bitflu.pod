@@ -6,6 +6,8 @@
 
 =for advent_author Fayland Lam
 
+=encoding utf8
+
 A<http://bitflu.workaround.ch/|bitflu> 是一个由 Perl 所编写的 BitTorrent 程序。它可以运行在 Unix 和 Linux 下。可以通过 telnet 进程端口来控制下载或上传 torrent。
 
 该程序托管与 github A<https://github.com/adrian-bl/bitflu> 开发相当活跃。几乎每个礼拜都有 bug fixes 或者 features

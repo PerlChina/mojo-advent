@@ -6,6 +6,8 @@
 
 =for advent_author Fayland Lam
 
+=encoding utf8
+
 今天是圣诞节，是个感恩的节日。
 
 于此同时，我们应当对 perl 的开发者致以最好的祝福。

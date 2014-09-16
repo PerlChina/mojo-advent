@@ -6,6 +6,8 @@
 
 =for advent_author Fayland Lam
 
+=encoding utf8
+
 创建所谓的 accessor 应该是件很普遍的事情，对于对象来说，大部分的属性都是 accessor. 因为这个功能的普遍性，CPAN 上大概有超过 20 个模块可以完成这个任务。其中最有名的应该是 M<Moose>, M<Mouse> 或者是 mst 刚开发的更轻量级的 M<Moo>. 或许大家用过的有 M<Class::Accessor>, M<Class::Accessor::Fast> 或者 M<Class::MethodMaker>. 今天要推荐的是目前来说最快速的 M<Class::XSAccessor>.
 
 Class::XSAccessor 最初是为了加速和简化 M<Padre> 的代码而开发，用法与其他的 accessor 模块大同小异。

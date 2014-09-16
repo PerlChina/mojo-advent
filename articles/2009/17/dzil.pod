@@ -6,6 +6,8 @@
 
 =for advent_author Fayland Lam
 
+=encoding utf8
+
 A<Dist::Zilla> 对模块作者来说是件利器。
 
 它与 M<ExtUtils::MakeMaker>, M<Module::Build>, M<Module::Install> 不同，它不是安装模块。它们的共同点是都可以打包一个 CPAN .tar.gz

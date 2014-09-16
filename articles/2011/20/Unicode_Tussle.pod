@@ -6,6 +6,8 @@
 
 =for advent_author Joe Jiang
 
+=encoding utf8
+
 Unicode 类的模块非常多，M<Unicode::Tussle> 是其中一个集大成者，作者是 brain d foy。它的主要作用非常简单，就是输出一些有用的脚本。这里介绍其中一个叫做 unichars 的脚本，能列出合乎 Unicode 属性的字符。
 
 尝试的话请最好用比较自动化的 CPAN 安装工具，因为这个模块的依赖性比较强。可以参考去年的 Advent 的第一天，了解 cpanm 的安装和使用。另外这个脚本需要 Perl 14 以上版本才能测试通过，所以可以参考去年 Advent 的第四天，了解 perlbrew 的使用。

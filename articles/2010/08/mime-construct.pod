@@ -6,6 +6,8 @@
 
 =for advent_author Joe Jiang
 
+=encoding utf8
+
 处理中文邮件，有时候挺麻烦的，要面对一堆的编码问题。如何能快速构造一封合乎MIME标准的测试邮件呢？如果你是幸运的 Linux 用户，那么你可以安装 mime-construct 软件包；如果你是更加幸运的 Debian/Ubuntu 用户，那么就这样做：
 
 =begin pre

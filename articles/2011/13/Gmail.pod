@@ -6,6 +6,8 @@
 
 =for advent_author Fayland Lam
 
+=encoding utf8
+
 Gmail 挺不错的。本章主要介绍如何使用 IMAP 来收取邮件和如何在 TLS 上发送邮件。
 
 Gmail 支持 POP3, 但是个人更喜欢用 IMAP，因为可以只查询未读邮件，和标记为已读，无须将其删除。还有它还能检查非 INBOX 的邮件。

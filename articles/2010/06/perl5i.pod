@@ -6,6 +6,8 @@
 
 =for advent_author Fayland Lam
 
+=encoding utf8
+
 M<perl5i> 的缩写是 Perl 5 Improved. perl5i 由 Michael G Schwern 所写，使用了一大批优秀的 Perl 模块，让 perl5 的编码变得更简单，更少错误和更实用。
 
 perl5i 的安装如其他的普通模块，请不要担心它的依赖模块，它只在需要的时候才载入它们。

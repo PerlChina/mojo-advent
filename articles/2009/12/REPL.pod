@@ -6,6 +6,8 @@
 
 =for advent_author Fayland Lam
 
+=encoding utf8
+
 M<Devel::REPL> 由牛人 Matt S Trout 所开发。整个开发过程通过 blog 发布，极具参考价值。
 
 A<http://chainsawblues.vox.com/library/post/a-perl-read-excute-print-loop-repl.html>

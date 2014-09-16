@@ -6,6 +6,8 @@
 
 =for advent_author Joe Jiang
 
+=encoding utf8
+
 对于喜欢乐器的人来说，常常需要了解和弦，但是如果小时候没有好好学习乐理，就会觉得十分遗憾。
 
 有了 M<Music::Chord::Note> 这个模块，就能解决许多人的燃眉之急。

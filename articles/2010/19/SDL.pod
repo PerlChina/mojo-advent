@@ -6,6 +6,8 @@
 
 =for advent_author Fayland Lam
 
+=encoding utf8
+
 老实说，我对 M<SDL> 一点都不熟悉。但是这不应该成为我不推荐该模块的原因之一。
 
 如果您对 Perl 编写游戏感兴趣，不管是 2D 还是 3D，我认为都有必要去看看该模块。

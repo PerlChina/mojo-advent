@@ -6,6 +6,8 @@
 
 =for advent_author Joe Jiang
 
+=encoding utf8
+
 进行数据库管理的时候，往往需要快速识别系统压力的来源（有罪的 Session），然后快速杀除。但是有时候真的会有意外的麻烦。
 
 =begin pre
