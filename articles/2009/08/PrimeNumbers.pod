@@ -6,6 +6,8 @@
 
 =for advent_author Joe Jiang
 
+=encoding utf8
+
 质数的计算是一个曾经非常有趣的话题，现在对我们来说也还是一个稍微有些难度的编程训练。下面我们就用这个话题来看看 Perl 和其他语言解决数学问题的能力。当然首先我们得有个基准程序：
 
 =begin pre

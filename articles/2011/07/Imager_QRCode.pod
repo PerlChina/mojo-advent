@@ -6,6 +6,8 @@
 
 =for advent_author CGI.NET
 
+=encoding utf8
+
 M<Imager::QRCode> 有趣的二位码生成模块。
 
 随着电子商务的兴起，二维码这种东西越来越多的出现在我们的生活中,想不想给你的用户也拥有一份属于自己网站的二维码呢？那用Imager::QRCode就没错了。

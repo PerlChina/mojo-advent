@@ -6,6 +6,8 @@
 
 =for advent_author Fayland Lam
 
+=encoding utf8
+
 想明白 M<Plack> 之前，很有必要认识一下 M<PSGI>。
 
 PSGI 是 Perl Web Server Gateway Interface Specification 的简称。它借鉴于 Python 的 A<http://www.python.org/dev/peps/pep-0333/|WSGI> 和 Ruby 的 A<http://rack.rubyforge.org/|Rack>

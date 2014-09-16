@@ -6,6 +6,8 @@
 
 =for advent_author Fayland Lam
 
+=encoding utf8
+
 安装新版 perl 需要理由吗？需要吗？需要吗？
 
 不管是想尝鲜，尝试新功能，还是想测试不同版本性能或者其它，你可能真的需要安装一个新版 perl。去年 cnhackTNT 介绍了 A<http://www.perlchina.org/advent/2009/PerlDevENV.html|Perl 开发环境建议>，如果你需要一个自定义的 perl 编译器的话，那是一个很不错的指导。但是如果你仅仅需要一个不同版本的 perl，我们现在有更好的全自动化的选择。那就是 M<App::perlbrew>.

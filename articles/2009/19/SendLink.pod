@@ -6,6 +6,8 @@
 
 =for advent_author Joe Jiang
 
+=encoding utf8
+
 A<Gtk2> 模块提供了与剪贴板打交道的能力，因此我们可以尝试用它来改进 Firefox 的一个功能，那就是很有用的 Send Link（中文叫做发送页面）。
 
 如果使用过其他浏览器比如 Opera 或者 IE，你就可能会用过这个拷贝当前页面地址的功能。这个功能对于那些关闭了地址栏的页面特别重要，在 Firefox 中你需要在当前页面上点击右键并选择 View Page Info，然后拷贝弹出的 Page Info 对话框中 Address 栏目的内容，并关闭对话框。这非常麻烦，让我们找一个偷懒的途径。

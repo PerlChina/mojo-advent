@@ -6,6 +6,8 @@
 
 =for advent_author Fayland Lam
 
+=encoding utf8
+
 M<BerkeleyDB> 是个高性能的数据库。
 
 当您需要操作一个极其巨大的文件，需要构造一个 super big 的 hash 或者 array 的时候，内存可能就是您最大的烦恼所在。而 BerkeleyDB 可以通过硬盘空间来保存该 hash 或者 array，到时候可以快速定位和 sort 之类，来完成您的需求。

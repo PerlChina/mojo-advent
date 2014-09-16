@@ -6,6 +6,8 @@
 
 =for advent_author Fayland Lam
 
+=encoding utf8
+
 M<Template::Extract> 由☻ 唐鳳 ☺ 所编写，可以使用 TT2 表达式从某个数据里提取东西，而无须使用正则表达式。
 
 一般来说，得到一个 HTML 内容之后，可以使用正则，或者类如 M<HTML::TreeBuilder> 之类的模块来提取数据。本文介绍的模块能同样使 job 完成，并且更加优雅。

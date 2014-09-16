@@ -6,6 +6,8 @@
 
 =for advent_author Fayland Lam
 
+=encoding utf8
+
 M<LWP::UserAgent> 是最基础的 Perl 抓取工具。M<WWW::Mechanize> 在此基础上通过 M<HTML::Form> 来提供提交表单和其他一些功能。
 
 今天要介绍的是 M<Furl>，一个更快速的解决方案。

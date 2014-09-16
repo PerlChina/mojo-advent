@@ -6,6 +6,8 @@
 
 =for advent_author Joe Jiang
 
+=encoding utf8
+
 对于大多数人来说，列表的处理是最让人头疼的一件事了，因为循环、变量一类的逻辑非常难以调试。而 M<List::MoreUtils> 则提供了一个简洁的接口，帮助我们进行高效的开发。
 
 这里就用其中一个有用的函数 natatime 作为例子介绍这个常用的模块。

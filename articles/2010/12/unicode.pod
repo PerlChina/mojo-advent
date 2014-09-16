@@ -6,6 +6,8 @@
 
 =for advent_author Joe Jiang
 
+=encoding utf8
+
 Unicode 的广泛使用，带来许多有趣的新问题，比如发现汉字之间的联系。孔乙己曾经研究过茴字的四种写法，那么现在我们可以看看国字的三种写法：简体、繁体、还有变体。
 
 如果你安装了 Encode::HanConvert，那么可以很容易找到国字的繁体写法：

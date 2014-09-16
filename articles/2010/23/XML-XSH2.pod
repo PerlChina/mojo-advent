@@ -6,6 +6,8 @@
 
 =for advent_author Joe Jiang
 
+=encoding utf8
+
 XML::XSH2 这个模块是用来实现类似 XSLT 功能的一个 Shell，可以用来很方便的操作 XML 文件。
 
 =begin pre

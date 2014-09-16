@@ -6,6 +6,8 @@
 
 =for advent_author Fayland Lam
 
+=encoding utf8
+
 JavaScript 是个很不错的语言。网上有一个简单的叫 ROT 13 的加密来保护 email，今天我们做一点邪恶的事，就是简单破解该加密。
 
 ROT 13 的版本有很多，不过原理是一样的。下面是一个简单的例子。

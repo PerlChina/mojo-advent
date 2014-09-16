@@ -6,6 +6,8 @@
 
 =for advent_author Joe Jiang
 
+=encoding utf8
+
 M<PDF::API2> 是久负盛名的 PDF 处理利器，我们这里演示的是如何用它来追踪 PDF 侵权的用户。
 
 =begin pre

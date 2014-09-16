@@ -6,6 +6,8 @@
 
 =for advent_author Fayland Lam
 
+=encoding utf8
+
 本文存属玩乐。
 
 M<Acme::Pony>

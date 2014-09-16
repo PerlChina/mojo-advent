@@ -6,6 +6,8 @@
 
 =for advent_author Fayland Lam
 
+=encoding utf8
+
 Well, 很多人都喜欢用 Excel or OpenOffice Calc 来打开表格文件。所以您的上司，客户或者朋友，会让你输出 csv 或者 xls 给他们。
 
 有些人喜欢直接用 print join(', ', map { '"' . $_ . '"' } @outs) 来输出成 CSV, 但是这是极度不好的行为，因为 outs 里可能有 " 也可能有 ,

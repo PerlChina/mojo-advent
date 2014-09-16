@@ -6,6 +6,8 @@
 
 =for advent_author Joe Jiang
 
+=encoding utf8
+
 SUID 是 Unix 的一个概念，可以让执行的程序拥有脚本的拥有者的权限。
 
 =begin code

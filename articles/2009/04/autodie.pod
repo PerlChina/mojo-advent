@@ -6,6 +6,8 @@
 
 =for advent_author Fayland Lam
 
+=encoding utf8
+
 在编写 Perl 脚本的时候，我们经常使用类似下面的代码来检查内置函数（如 open）是否成功。
 
 =begin code

@@ -4,6 +4,8 @@
 
 =for advent_author Joe Jiang
 
+=encoding utf8
+
 其实这还不是一个真正可用的模块，这里的名字只是预备将来发布的，所以请各位看官大家
 手下留情，先不要注册掉它。
 

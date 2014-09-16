@@ -6,6 +6,8 @@
 
 =for advent_author Fayland Lam
 
+=encoding utf8
+
 M<pip> 是 M<CPAN> 的一个扩展。
 
 安装最新版本的 CPAN 模块很容易，使用 cpan ModuleName 即可。

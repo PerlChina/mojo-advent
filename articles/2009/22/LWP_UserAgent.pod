@@ -6,6 +6,8 @@
 
 =for advent_author Fayland Lam
 
+=encoding utf8
+
 M<LWP::UserAgent> 应该是个大家都很熟悉的模块，做 scraper 所不可缺少的。
 
 如下的 tip 可能对您所有帮助。因为 M<WWW::Mechanize> 是其子类，所以下面的东西 WWW::Mechanize 也是可以使用的。

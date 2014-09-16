@@ -6,6 +6,8 @@
 
 =for advent_author Fayland Lam
 
+=encoding utf8
+
 如果一个 daemon 处理队列太慢（或其他情况），M<Parallel::ForkManager> 和 M<Parallel::Prefork> 都是很不错的选择。
 
 下面的代码来自我们实际运行中的一个 M<TheSchwartz> worker 的 daemon, 实际上很大一部分都是拷贝自 A<http://d.hatena.ne.jp/tokuhirom/20081110/1226291955>

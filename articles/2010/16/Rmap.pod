@@ -6,6 +6,8 @@
 
 =for advent_author Fayland Lam
 
+=encoding utf8
+
 有时候你有一个很复杂的数据结构，比如我们的 M<Catalyst> M<YAML> 配置文件。有时候你会有一个很奇特的要求，比如我们的某台服务器没有私有 IP，所以需要对这个 YAML 里的所有 IP 进行转换。
 
 解决的方案有很多种。下面是一个很简单实用的方案（使用 M<Data::Rmap>）：

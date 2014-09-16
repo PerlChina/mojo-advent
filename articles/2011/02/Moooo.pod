@@ -6,6 +6,8 @@
 
 =for advent_author Woosley Xu
 
+=encoding utf8
+
 每个人都喜欢面向对象编程，于是每个人都喜欢L<Moose>。但是有些时候，Moose
 的加载速度成为了我们应用的瓶颈。这时候L<Mouse>出现了，L<Class::Accessor>
 出现了。但这还不够，L<Mouse>仍然过于沉重，L<Class::Accessor>仍然只能提供

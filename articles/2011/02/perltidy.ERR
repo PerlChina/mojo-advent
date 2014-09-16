@@ -1,0 +1,8 @@
+
+1: >cat A.pm
+   ^        
+found > where term expected
+
+6: >mo-inline A.pm
+   ^              
+found > where term expected

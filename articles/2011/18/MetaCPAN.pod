@@ -6,6 +6,8 @@
 
 =for advent_author Fayland Lam
 
+=encoding utf8
+
 CPAN 在 2011 年最大的变化便是有了 A<https://metacpan.org/|MetaCPAN>.
 
 MetaCPAN 类似 A<http://search.cpan.org/>, 但是更好用功能更加丰富。一般来说，有了 metacpan 就可以抛弃 search.cpan.org 了。

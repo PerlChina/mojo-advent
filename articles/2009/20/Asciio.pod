@@ -6,6 +6,8 @@
 
 =for advent_author Fayland Lam
 
+=encoding utf8
+
 M<App::Asciio> 是一个专门搞 ASCII 图表的工具。
 
 虽然它有点难安装，但是整个程序还是比较好用的。

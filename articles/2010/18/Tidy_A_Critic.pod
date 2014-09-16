@@ -6,6 +6,8 @@
 
 =for advent_author Fayland Lam
 
+=encoding utf8
+
 我觉得我没能在去年或者今年的第一天介绍 M<Perl::Tidy> 和 M<Perl::Critic> 是我的过错。
 
 有些人喜欢 Python 的缩进风格，觉得 Perl 太随意了，你可以将 ; 放在一行最前面或者最后面。你可以将一大堆 Perl 代码堆积在一行里。他们觉得阅读 Perl 的代码很累。当然，这并不是 Perl 的错。

@@ -6,6 +6,8 @@
 
 =for advent_author Joe Jiang
 
+=encoding utf8
+
 做维护的人每天都需要和 ssh 打交道，可是往往会面对 ssh 断线的苦恼。在发现了 A<http://www.harding.motd.ca/autossh|autossh> 这个很酷的 ssh 断线自动重连工具之后，一个问题随之浮现出来，那就是如何才能找到它需要的 echo 服务（如果不希望在所有机器上启动 inetd 的 echo 服务）。想找个 A<http://search.cpan.org/dist/AnyEvent|AnyEvent> 框架的实现未果，不由得想起多年前用过的一个模块 A<http://search.cpan.org/dist/POE|POE>。
 
 POE 虽然名叫 Perl Object Environment，但是和 OO 并无显著的关系，而是一个面向 Perl Event Driven Programming 的框架。在众多的事件驱动框架中，这是一个比较成熟的选择。
