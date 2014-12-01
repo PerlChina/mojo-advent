@@ -1,0 +1,94 @@
+=for advent_year 2014
+
+=for advent_day 1
+
+=for advent_title Rexify
+
+=for advent_author Chenlin Rao
+
+=encoding utf8
+
+Perl 一直以来都是系统管理员们的好朋友。早在L<09 年的 advent Day 5|../../2009/05/SSHBatch.pod> 上，就介绍过一个 Perl 工具叫 L<SSH::Batch>。随着时代变迁，更完备的集群架构管理工具 Puppet、SaltStack、Ansible 等大行其道。在这方面，Perl 社区也出现了新的项目，这就是 (R)?ex 项目。
+
+(R)?ex 项目的设计以配置管理和部署为核心。这个 (R)? ，可以是 SSH 到远程主机，可以是直接到本地主机，也可以是调用 API 控制各大云平台。
+
+(R)?ex 本身的 DSL 设计，是仿照了 Puppet 的语法。(作者本身是德国一位 IDC 运维，本身手上也有 Puppet 环境)
+
+=head2 资源定义语法示例
+
+=begin code
+
+user "ubuntu";
+group frontend => "frontend[01..05]";
+sudo TRUE;
+
+desc "Prepare Frontend Server";
+task "prepare", group => "frontend", sub {
+  pkg "apache2",
+    ensure => "latest";
+
+  service "apache2",
+    ensure => "started";
+};
+
+desc "Keep Configuration in sync";
+task "configure", group => "frontend", sub {
+  prepare();
+
+  file "/etc/apache2/apache2.conf",
+    source    => "files/etc/apache2/apache2.conf",
+    on_change => sub { service apache2 => "reload"; };
+};
+
+=end code
+
+非常一目了然，之前没用过的人也可以一眼看懂这段配置是要干嘛——安装最新的 apache 软件包，启动 apache 服务，传输本地的 "files/etc/apache2/apache2.conf" 到远程主机的 "/etc/apache2/apache2.conf"，然后重载 apache 服务。
+
+=head2 即时运行
+
+如果 Rex 止于这种程度，那么我就建议大家直接使用 Puppet 好了。Puppet 的一个问题：无法即时生效。在 Rex 中，实际就是一个很类似之前 SSH::Batch 的用法：
+
+=begin code
+
+$ rex -qw -H "frontend[01..15] middleware[01..05] db[01..04]" -e "say run 'uptime'"
+
+=end code
+
+=head2 云平台 API
+
+云平台，其实也就是一种 Rex 内部资源，所以其使用方式跟普通的 pkg/file/service/cron/ps/tail 等资源并无不同：
+
+=begin code
+
+use Rex::Commands::Cloud;
+
+user "root";
+public_key "/path/to/your/just/created/amazon-public.key";
+private_key "/path/to/your/just/downloaded/amazon-private-key.pem";
+
+my $access_key = "your-access-key";
+my $secret_access_key = "your-secret-key";
+
+cloud_service "Amazon";
+cloud_auth "$access_key", "$secret_access_key";
+cloud_region "ec2.eu-west-1.amazonaws.com";
+
+task "create", sub {
+   cloud_instance create => { 
+            image_id => "ami-02103876",
+            name     => "static01",
+            key      => "dev-test",
+         };
+};
+
+=end code
+
+大家可能注意到上面配置中多了一行 C<use Rex::Commands::Cloud>，事实上大家可以任意自己扩展 Rex::Commands 接口，实现自己的资源(名字空间叫 Rex::Commands 而不是 Rex::Resources，倒也可以说明 Rex 的实质，依然是一个命令执行式的工具)。
+
+事实上，Rex 有专门的 modules.rexify.org 来收集发布各种第三方资源。之前，就有国内的朋友制作了 Rex::Commands::Zabbix2 模块。
+
+=head2 web 界面
+
+任何自动化工具最终都会走向 web 界面展示。Rex 最近用 Mojolicious 框架完成了官方的 JobControl 界面。这里就不占用篇幅了，大家可以自行访问官网文档：L<http://www.rexify.org/howtos/jobcontrol/create_project.html>
+
+最后值得说明的是：Rex 官网有中文同步翻译，地址见 L<http://rex.perl-china.com>
