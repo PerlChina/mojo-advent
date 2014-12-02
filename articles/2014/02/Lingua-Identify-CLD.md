@@ -17,12 +17,11 @@
 
  * 判断某网页 url 是哪国语言，类似 Google Chrome 的判断
 
-    use LWP::Simple;
-    use Lingua::Identify::CLD;
-
-    my $cld = Lingua::Identify::CLD->new(isPlainText => 0);
-    my @langs = $cld->identify(get('http://www.163.com/'));
-    print join(", ", @langs); # CHINESE, zh-CN, 97, 1
+        use LWP::Simple;
+        use Lingua::Identify::CLD;
+        my $cld = Lingua::Identify::CLD->new(isPlainText => 0);
+        my @langs = $cld->identify(get('http://www.163.com/'));
+        print join(", ", @langs); # CHINESE, zh-CN, 97, 1
 
 ## 命令行
 
