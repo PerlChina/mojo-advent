@@ -4,22 +4,17 @@
 
 它的使用超级简单
 
-```
-use Lingua::Identify::CLD;
-use Data::Dumper;
+    use Lingua::Identify::CLD;
 
-my $cld = Lingua::Identify::CLD->new();
-my @lang = $cld->identify("Text"); # 'ENGLISH', 'en', 100, 1
-```
+    my $cld = Lingua::Identify::CLD->new();
+    my @lang = $cld->identify("Text"); # 'ENGLISH', 'en', 100, 1
 
 ## 命令行
 
 *identify-cld*
 
-```
-➜  mojo-advent git:(master) ✗ cat articles/draft/Lingua-Identify-CLD.md | identify-cld
-STDIN: CHINESE
-```
+    ➜  mojo-advent git:(master) ✗ cat articles/2014/02/Lingua-Identify-CLD.md | identify-cld
+    STDIN: CHINESE
 
 ## 作者
 [Fayland Lam](http://fayland.me/)

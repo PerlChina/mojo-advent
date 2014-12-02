@@ -5,9 +5,12 @@ use warnings;
 use v5.10;
 use base 'Exporter';
 use vars qw/@EXPORT_OK/;
-@EXPORT_OK = qw/get_day_file get_available_years get_available_days render_pod get_current_year/;
+@EXPORT_OK = qw/get_day_file get_available_years get_available_days render_pod render_markdown get_current_year/;
 
 use LocalPodAdvent;
+use Text::Markdown 'markdown';
+use Mojo::Util qw/slurp/;
+use Encode;
 
 use File::Spec;
 use Cwd qw/abs_path/;
@@ -46,6 +49,17 @@ sub render_pod {
     my $advent = LocalPodAdvent->new;
     my $result = $advent->parse_file($file);
     return $result;
+}
+
+sub render_markdown {
+    my ($file) = @_;
+    my $content = slurp($file);
+    my $title = (split(/[\r\n]+/, $content))[0]; # default first line as title
+    $title =~ s/^\#\s*//;
+    return {
+        advent_title => $title,
+        body  => markdown(decode_utf8($content))
+    };
 }
 
 ## Date related

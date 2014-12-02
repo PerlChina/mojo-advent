@@ -1,7 +1,7 @@
 package PerlChinaAdvent::Controller::Calendar;
 
 use Mojo::Base 'Mojolicious::Controller';
-use PerlChinaAdvent::Entry qw/get_day_file get_available_days get_current_year render_pod/;
+use PerlChinaAdvent::Entry qw/get_day_file get_available_days get_current_year render_pod render_markdown/;
 use Calendar::Simple;
 
 sub index {
@@ -32,8 +32,14 @@ sub entry {
         );
     }
 
-    my $result = render_pod($file);
-    $c->stash('pod_data' => $result);
+    my $data;
+    if ($file =~ /\.md$/) {
+        $data = render_markdown($file);
+    } else {
+        $data = render_pod($file);
+    }
+
+    $c->stash('entry_data' => $data);
 }
 
 1;

@@ -1,4 +1,4 @@
-% my $advent_title = $pod_data->{advent_title};
+% my $advent_title = $entry_data->{advent_title};
 % layout 'default', title $advent_title;
 
 <ol class="breadcrumb">
@@ -7,7 +7,7 @@
   <li class="active"><%= link_to "/calendar/$year/$day" => begin %><%= $advent_title %><% end %></li>
 </ol>
 
-%= b($pod_data->{body})
+%= b($entry_data->{body})
 
 % if ($is_disqus_on) {
 <div id="disqus_thread"></div>
