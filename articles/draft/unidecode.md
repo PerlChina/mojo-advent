@@ -15,5 +15,28 @@
     print unidecode("您好"); # Nin Hao
     print unidecode("こんにちは"); # konnitiha
 
+该模块对于某些字符可能支持不够完美，这时候你可以简单地写一个 wrap，参考该模块 [POD](https://metacpan.org/pod/Text::Unidecode) 文档。
 
+## Usage
 
+一个将目录下所有中文名的文件转成对应拼音的脚本：
+
+    use Text::Unidecode;
+    use Encode;
+
+    opendir(my $dir, "/some/where/from_dir");
+    my @files = grep { -f $_ } readdir($dir);
+    closedir($dir);
+
+    foreach my $file (@files) {
+        my $to_file = unidecode(decode_utf8($file));
+        $to_file =~ s/\s+/\_/g;
+        next if $to_file eq $file;
+
+        print "$file -> $to_file\n";
+        # do a copy
+    }
+
+输入结果大致为：
+
+    夜空中最亮的星.mp3 -> Ye_Kong_Zhong_Zui_Liang_De_Xing_.mp3
