@@ -13,12 +13,9 @@ sub year {
     my $c = shift;
 
     my $year = $c->stash('year');
-    my $current_year = get_current_year();
-    if ($year < $current_year) {
-        my @days = get_available_days($year);
-        $c->stash('available_days', \@days);
-        $c->stash('calendar', scalar calendar(12, $year, 1));
-    }
+    my @days = get_available_days($year);
+    $c->stash('available_days', \@days);
+    $c->stash('calendar', scalar calendar(12, $year, 1));
 }
 
 sub entry {
