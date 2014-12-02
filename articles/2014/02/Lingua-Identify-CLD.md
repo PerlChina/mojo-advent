@@ -8,6 +8,21 @@
 
     my $cld = Lingua::Identify::CLD->new();
     my @lang = $cld->identify("Text"); # 'ENGLISH', 'en', 100, 1
+    # $lang[0] -> language name
+    # $lang[1] -> language id
+    # $lang[2] -> confidence
+    # $lang[3] -> is_reliable (bool)
+
+## 适用场景
+
+ * 判断某网页 url 是哪国语言，类似 Google Chrome 的判断
+
+    use LWP::Simple;
+    use Lingua::Identify::CLD;
+
+    my $cld = Lingua::Identify::CLD->new(isPlainText => 0);
+    my @langs = $cld->identify(get('http://www.163.com/'));
+    print join(", ", @langs); # CHINESE, zh-CN, 97, 1
 
 ## 命令行
 
