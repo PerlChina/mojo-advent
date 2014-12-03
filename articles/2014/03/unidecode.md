@@ -40,3 +40,6 @@
 输入结果大致为：
 
     夜空中最亮的星.mp3 -> Ye_Kong_Zhong_Zui_Liang_De_Xing_.mp3
+
+## 作者
+[Fayland Lam](http://fayland.me/)
