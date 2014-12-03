@@ -66,7 +66,7 @@ _KeyczarTool-0.71g-090613.jar 文件可能会改变名字_
 
 ## 总结
 
-原则上就是这么简单。测试代码可以从 [https://github.com/PerlChina/mojo-advent/examples/keyczar/](https://github.com/PerlChina/mojo-advent/examples/keyczar/) 下获取。
+原则上就是这么简单。测试代码可以从 [https://github.com/PerlChina/mojo-advent/tree/master/examples/2014/keyczar](https://github.com/PerlChina/mojo-advent/tree/master/examples/2014/keyczar) 下获取。
 
 ## 作者
 [Fayland Lam](http://fayland.me/)
