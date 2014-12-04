@@ -34,5 +34,9 @@
 
 很简单，但是很管用。
 
+## Tie::Hash::Indexed
+
+[Tie::Hash::Indexed](https://metacpan.org/pod/Tie::Hash::Indexed) 是一个使用 XS 加速的 Tie::IxHash 替代品。但是目前测试不通过而且很久没有维护了。
+
 ## 作者
 [Fayland Lam](http://fayland.me/)
