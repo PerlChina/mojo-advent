@@ -119,12 +119,12 @@ Milla 是一个 [Dist::Zilla](https://metacpan.org/release/Dist-Zilla) 的优秀
 
 为什么 Milla 要比其他的好，那是因为 Milla 可以让我们专注于您所需要专注的地方：
 
-    * 您无须关心 Makefile.PL MANIFEST LICENSE META.* 是什么了和做什么了
-    * 您无须更新所有的模块的版本号了。
-    * 您无须更新 Changes 发布的时间了。
-    * 您无须做 git tag 了
-    * Travis 可以直接测试您的模块，在不同版本的 perl 下
-    * Coveralls 告诉您模块的测试代码覆盖率，好好考虑下您应该尽量多写测试了
+ * 您无须关心 Makefile.PL MANIFEST LICENSE META.* 是什么了和做什么了
+ * 您无须更新所有的模块的版本号了。
+ * 您无须更新 Changes 发布的时间了。
+ * 您无须做 git tag 了
+ * Travis 可以直接测试您的模块，在不同版本的 perl 下
+ * Coveralls 告诉您模块的测试代码覆盖率，好好考虑下您应该尽量多写测试了
 
 尝试一下，您会喜欢它的。
 
