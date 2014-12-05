@@ -35,11 +35,11 @@ Milla 是一个 [Dist::Zilla](https://metacpan.org/release/Dist-Zilla) 的优秀
 
 ## 开始真正工作
 
-    * cpanfile - 模块所依赖的模块。比如这里我们需要加入行
+ * cpanfile - 模块所依赖的模块。比如这里我们需要加入行
         requires 'Acme::CPANAuthors';
-    * Changes - 将您做的改动放到 {{$NEXT}} 的下一行。{{$NEXT}} 会在发布时自动根本版本号和发布时间
-    * lib/Acme/CPANAuthors/Chinese.pm - 主模块。
-    * t/ - 测试文件。
+ * Changes - 将您做的改动放到 {{$NEXT}} 的下一行。{{$NEXT}} 会在发布时自动根本版本号和发布时间
+ * lib/Acme/CPANAuthors/Chinese.pm - 主模块。
+ * t/ - 测试文件。
 
 ## 额外服务
 
