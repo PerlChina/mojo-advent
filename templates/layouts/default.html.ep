@@ -5,6 +5,7 @@
     <title><%= title %> - PerlChina Advent</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     %= stylesheet "/assets/css/bootstrap.min.css"
+    %= stylesheet "/assets/css/prettify.css"
   </head>
   <body>
 
@@ -47,5 +48,12 @@
 
     %= javascript "/assets/js/jquery.min.js"
     %= javascript "/assets/js/bootstrap.min.js"
+    %= javascript "/assets/js/prettify.js"
+    %= javascript begin
+      $(window).load(function(){
+        $("pre").addClass("prettyprint");
+        prettyPrint();
+      })
+    %= end
   </body>
 </html>
