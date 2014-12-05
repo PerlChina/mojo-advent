@@ -57,7 +57,7 @@ Milla 是一个 [Dist::Zilla](https://metacpan.org/release/Dist-Zilla) 的优秀
 
 ### Travis
 
-[Travis](https://travis-ci.org/) 是一个免费得测试服务器。可以使用 GitHub 账号登陆，然后在 https://travis-ci.org/profile 对该 repo 启用服务。
+[Travis](https://travis-ci.org/) 是一个免费的测试服务器。可以使用 GitHub 账号登陆，然后在 https://travis-ci.org/profile 对该 repo 启用服务。
 
 ### Coveralls
 
@@ -91,25 +91,29 @@ Milla 是一个 [Dist::Zilla](https://metacpan.org/release/Dist-Zilla) 的优秀
     badges = travis
     badges = coveralls
 
-GitHubREADME::Badge 是一个 Dist::Zilla 的插件用来显示 Travis/Coveralls 的 Badge.
+[GitHubREADME::Badge](https://metacpan.org/pod/Dist::Zilla::Plugin::GitHubREADME::Badge) 是一个 Dist::Zilla 的插件用来显示 Travis/Coveralls 的 Badge.
 
 ## 发布代码
 
-发布之前您需要做下测试
+ * 发布之前您需要做下测试
 
     $ milla test
 
-然后 prove -lr t/ 也是可以的。
+当然 prove -lr t/ 也是可以的。
 
-激动人心的时候来了，发布从来没有如此简单过：
+ * 激动人心的时候来了，发布从来没有如此简单过：
 
     $ milla release
 
 然后我们就成功发布了该模块。
 
+ * 来清除创建的额外目录。
+
     $ milla clean
 
-来清除创建的额外目录。
+ * 打包文件，我自己去 [PAUSE](https://pause.perl.org/) 上传
+
+    $ milla build
 
 ## 总结
 
