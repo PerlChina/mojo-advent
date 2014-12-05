@@ -97,23 +97,23 @@ Milla 是一个 [Dist::Zilla](https://metacpan.org/release/Dist-Zilla) 的优秀
 
  * 发布之前您需要做下测试
 
-    $ milla test
+        $ milla test
 
 当然 prove -lr t/ 也是可以的。
 
  * 激动人心的时候来了，发布从来没有如此简单过：
 
-    $ milla release
+        $ milla release
 
 然后我们就成功发布了该模块。
 
  * 来清除创建的额外目录。
 
-    $ milla clean
+        $ milla clean
 
  * 打包文件，我自己去 [PAUSE](https://pause.perl.org/) 上传
 
-    $ milla build
+        $ milla build
 
 ## 总结
 
