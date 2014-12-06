@@ -14,7 +14,7 @@ Perl string 中可以使用变量，如
 不行，不过有间接的方法，
   
     print "the output is : ${\ $object->method($argument) }, please verify";
-`
+
 或者，
   
     print "the output is : @{[ $object->method($argument) ]}, please verify";
