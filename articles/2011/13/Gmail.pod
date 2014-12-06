@@ -37,7 +37,7 @@ foreach my $msg_id (@unseen) {
     my $string = $imap->body_string($msg_id)
         or die "Could not body_string: ", $imap->LastError;
     print "We get $msg_subject from $msg_from: $string\n";
-    
+
     $imap->see($msg_id); # mark as read if needed
 }
 
@@ -48,21 +48,21 @@ $imap->logout();
 
 邮件的用途比较广泛，比如你在其他地方或者某些人会经常给你发送一些特定格式的邮件，您可以写个脚本来处理这些。
 
-另外我们也经常需要发送邮件，如果要大批量发送的话，sendmail, Qmail 或者 Postfix 等是一个不错的选择，但是如果仅仅是需要偶尔发送一些邮件，还是可以使用 Gmail 的 SMTP 服务器的。这里我们用 M<Email::Sender::Simple> 和 M<Email::Sender::Transport::SMTP::TLS> 来发送。
+另外我们也经常需要发送邮件，如果要大批量发送的话，sendmail, Qmail 或者 Postfix 等是一个不错的选择，但是如果仅仅是需要偶尔发送一些邮件，还是可以使用 Gmail 的 SMTP 服务器的。这里我们用 M<Email::Sender::Simple> 和 M<Email::Sender::Transport::SMTPS> 来发送。
 
 =begin pre
 
 use Email::Sender::Simple qw(sendmail);
-use Email::Sender::Transport::SMTP::TLS;
+use Email::Sender::Transport::SMTPS;
 use Try::Tiny;
 
-my $transport = Email::Sender::Transport::SMTP::TLS->new(
+my $transport = Email::Sender::Transport::SMTPS->new(
     host => 'smtp.gmail.com',
-    port => 587,
-    username => 'myusername@gmail.com',
-    password => 'mysecretpass',
+    ssl  => 'starttls',
+    sasl_username => 'myusername@gmail.com',
+    sasl_password => 'mysecretpass',
+    debug => 0, # or 1 to enable debug when you see a failure
 );
-
 
 use Email::Simple::Creator; # 需要发送附件的话，可以试试 MIME::Lite 到最后 my $message = $msg->as_string; 即可
 my $message = Email::Simple->create(
