@@ -64,3 +64,7 @@ Perl 5.20 可以使用后缀解引用，因为是新的feature，并不是默认
 
 [Cool new Perl feature: postfix dereferencing](http://perltricks.com/article/68/2014/2/13/Cool-new-Perl-feature--postfix-dereferencing)
 
+## 作者  
+
+* [SWUECHO](https://metacpan.org/author/SWUECHO)
+
