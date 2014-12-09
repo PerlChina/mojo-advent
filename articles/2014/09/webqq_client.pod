@@ -11,7 +11,7 @@
 
 最早的时候，加入了一个Python的群，看到群里有个QQ机器人可以自动帮大家查询天气
 
-群里贴出来的url会自动去获取下html的<title>内容，感觉蛮不错的，就想着也搞一个玩一下
+群里贴出来的url会自动去获取下html的 `<title>` 内容，感觉蛮不错的，就想着也搞一个玩一下
 
 这个Python群的群主也很热心，搞了个开源的项目放到了github上：L<https://github.com/coldnight/twqq>
 
