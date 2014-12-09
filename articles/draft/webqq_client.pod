@@ -1,0 +1,173 @@
+=encoding utf8
+
+=for advent_year 2014
+
+=for advent_title Webqq::Client模块介绍
+
+=for advent_author Perfi Wang
+
+
+=head2 背景来源
+
+最早的时候，加入了一个Python的群，看到群里有个QQ机器人可以自动帮大家查询天气
+
+群里贴出来的url会自动去获取下html的<title>内容，感觉蛮不错的，就想着也搞一个玩一下
+
+这个Python群的群主也很热心，搞了个开源的项目放到了github上：L<https://github.com/coldnight/twqq>
+
+源码下载下来安装的过程很艰辛，因为一些语法特性要求必须python2.7以上版本并且依赖的pycurl包也非常难编译安装
+
+折腾了很久总算也跑起来了，但毕竟不是Perl写的，不是很熟悉，用起来也觉得不爽
+
+在github上搜索了下 "webqq"，得到很多搜索结果，有各种语言的实现，但活跃的项目不多
+
+尤其是基于Perl开发的项目少之又少，反而Python的倒一大堆，看不惯这种情况，决定自己亲自用Perl写一个
+
+在这个过程中也了解到了，目前存在的各自版本的qq机器人都基本上是基于腾讯的webqq协议来实现的
+
+因此要自己从头开发一个难度并不大，另外，自己有管理几个Perl的QQ群
+
+群里经常会有一些新手不知道该去哪里找模块，去哪里查文档，讨论一些代码问题的时候
+
+也总是不方便，因此也萌生了用Perl写一个智能化的QQ机器人，能够在群里协助大家学习Perl语言
+
+例如在QQ群里发一个perldoc -f open，机器人就会自动把相关的文档贴出来，聊天过程中提到了某个模块的名字
+
+机器人也会自动的把模块相关的介绍、作者、用法自动贴出来，很贴心有木有?
+
+当然一个机器人能做的事情远远不止这些，Webqq::Client提供的只是一个客户端的框架，剩下的任凭你的想象力
+
+=head2 原理说明
+
+模块采用AnyEvent的异步框架，尽可能的减少依赖模块，以便于安装和使用，提供面向对象的使用方式
+
+如果你对AnyEvent有一定了解，那么相信不需要花费太多时间就很容易掌握模块的使用方法，如果你并不了解AnyEvent
+
+也没有关系，你要做的仅仅是三件事：
+
+1、登录
+
+2、设置感兴趣的回调函数，在回调函数中对消息进行处理
+
+3、运行
+
+=head2 模块用法简介
+
+    use Webqq::Client;
+    use Digest::MD5 qw(md5_hex);
+    my $qq = 12345678;
+    
+    #你的qq密码请使用md5加密后再传递给Webqq::Client
+    #我可不想被怀疑有盗号行为
+    my $pwd = md5_hex('your password');
+    
+    #通过new来初始化一个客户端对象
+    #debug=>1来打印debug信息方便调试
+    my $client = Webqq::Client->new(debug=>0);
+    
+    #通过login进行登录
+    $client->login( qq=> $qq, pwd => $pwd);
+    
+    #客户端加载ShowMsg插件，用于打印消息内容
+    $client->load("ShowMsg");
+
+    #登录成功后设置客户端的发送消息回调函数
+    $client->on_send_message=sub{
+        #当发送完消息后，传递给回调函数的是三个参数
+        my $msg = shift;   #发送的原始消息 
+        my $is_success = shift; #发送消息状态，True为成功，False为失败
+        my $status = shift; #发送消息状态，UTF8编码的中文，"发送成功" 或者 "发送失败"
+
+        #客户端执行插件，这个插件的作用是直接打印消息到屏幕
+        $client->call("ShowMsg",$msg);
+    }; 
+
+    #登录成功后设置客户端的接收消息回调函数
+    $client->on_receive_message = sub{
+        #当收到消息后，传递给回调函数的唯一参数是原始消息的一个hash引用
+        my $msg = shift;
+
+        #客户端执行插件，这个插件的作用是直接打印消息到屏幕
+        $client->call("ShowMsg",$msg);
+
+        #你可以对收到的消息进行任意其他的处理
+        #你也可以使用Data::Dumper这样的模块来查看消息的结构，比如
+        #use Data::Dumper;
+        #print Dumper $msg;
+
+        ...;
+    };
+    #客户端进入事件循环,正式开始运行
+    $client->run();
+
+更多使用方法和介绍请参见文档
+
+=head2 关于回调函数
+
+目前提供了几种回调函数，可以满足大多是使用场景，请参见模块的文档介绍
+
+=head2 关于插件
+
+客户端提供了一个基本的插件管理的机制，来方便你编写和运行插件，我们举个具体的例子说明下什么是插件，怎么写一个插件
+
+比如我想实现一个插件，作用就是当收到群消息的时候就回复一个hello world到这个群上
+
+第一步：写一个插件模块
+
+    package Webqq::Client::Plugin::HelloWorld;
+    #模块中定义一个call函数
+    sub call{
+        #记住，call函数第一个参数永远是客户端对象
+        my $client = shift;
+
+        #这个插件还需要额外传入一个客户端收到的群消息才能进行后续的处理
+        my $msg = shift;
+
+        #我们只对群消息感兴趣
+        return if $msg->type ne 'group_message';    
+    
+        #使用客户端的reply_message()方法进行消息回复
+        $client->reply_message($msg,"hello world");
+    }    
+    1;
+
+第二步：加载插件
+
+    #使用load方法进行加载，会自动查找Webqq::Client::Plugin::HelloWorld模块
+    $client->load("HelloWorld");
+
+第三部：使用插件
+   
+    #使用call()方法调用插件 
+    $client->on_receieve_message = sub{
+        my $msg = shhift;
+        $client->call("HelloWorld",$msg);
+    };
+    $client->run();
+
+
+=head2 模块从哪里获取
+
+目前模块已经发布到了github和cpan上
+
+github地址: L<https://github.com/sjdy521/Webqq-Client>
+
+metacpan地址：L<https://metacpan.org/pod/Webqq::Client>
+
+github更新会比较频繁，建议使用github随时保持和最新版本同步
+
+=head2 补充
+
+腾讯的新版本是smartqq，老版本是webqq，这里统一都称之为webqq，webqq功能本身受限并不能向PC端那样做很多事情
+
+另外，模块还处于不断开发完善中，存在bug和很多不完善之处是必然的，有什么问题或想法欢迎跟作者反馈
+
+如果你是新手，希望有一个一起学习交流Perl的地方，欢迎加入我所在的QQ群: PERL学习交流 群号：144539789
+
+如果你是高手，又乐于助人，对新手有足够的耐心，也非常欢迎加入
+
+=head2 作者
+
+Perfi, E<lt>sjdy521@163.comE<gt>
+
+=cut
