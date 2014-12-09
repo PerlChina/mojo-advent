@@ -106,6 +106,10 @@
 
 目前提供了几种回调函数，可以满足大多是使用场景，请参见模块的文档介绍
 
+L<https://github.com/sjdy521/Webqq-Client/blob/master/doc/Client.pod>
+
+但有一点你需要注意，客户端是单线程的，你不应该在回调函数中长时间阻塞，这样会导致整个客户端阻塞，什么事都不做
+
 =head2 关于插件
 
 客户端提供了一个基本的插件管理的机制，来方便你编写和运行插件，我们举个具体的例子说明下什么是插件，怎么写一个插件
@@ -124,7 +128,7 @@
         my $msg = shift;
 
         #我们只对群消息感兴趣
-        return if $msg->type ne 'group_message';    
+        return if $msg->{type} ne 'group_message';    
     
         #使用客户端的reply_message()方法进行消息回复
         $client->reply_message($msg,"hello world");
@@ -140,7 +144,7 @@
    
     #使用call()方法调用插件 
     $client->on_receieve_message = sub{
-        my $msg = shhift;
+        my $msg = shift;
         $client->call("HelloWorld",$msg);
     };
     $client->run();
