@@ -1,0 +1,1253 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=Generator content="Microsoft Word 12 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.5pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"页眉 Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	layout-grid-mode:char;
+	border:none;
+	padding:0cm;
+	font-size:9.0pt;
+	font-family:"Calibri","sans-serif";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"页脚 Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	layout-grid-mode:char;
+	font-size:9.0pt;
+	font-family:"Calibri","sans-serif";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p
+	{margin-right:0cm;
+	margin-left:0cm;
+	font-size:12.0pt;
+	font-family:宋体;}
+code
+	{font-family:宋体;}
+pre
+	{mso-style-link:"HTML 预设格式 Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:宋体;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"批注框文本 Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:9.0pt;
+	font-family:"Calibri","sans-serif";}
+span.Char
+	{mso-style-name:"页眉 Char";
+	mso-style-link:页眉;}
+span.Char0
+	{mso-style-name:"页脚 Char";
+	mso-style-link:页脚;}
+span.string
+	{mso-style-name:string;}
+span.HTMLChar
+	{mso-style-name:"HTML 预设格式 Char";
+	mso-style-link:"HTML 预设格式";
+	font-family:宋体;}
+span.Char1
+	{mso-style-name:"批注框文本 Char";
+	mso-style-link:批注框文本;}
+span.shsymbol
+	{mso-style-name:sh_symbol;}
+span.shstring
+	{mso-style-name:sh_string;}
+span.shfunction
+	{mso-style-name:sh_function;}
+span.shnumber
+	{mso-style-name:sh_number;}
+span.shcbracket
+	{mso-style-name:sh_cbracket;}
+span.qname
+	{mso-style-name:qname;}
+span.apple-converted-space
+	{mso-style-name:apple-converted-space;}
+span.groupnumber
+	{mso-style-name:group_number;}
+ /* Page Definitions */
+ @page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	layout-grid:15.6pt;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+
+</head>
+
+<body lang=ZH-CN link=blue vlink=purple style='text-justify-trim:punctuation'>
+
+<div class=Section1 style='layout-grid:15.6pt'>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+perl</span><span style='font-family:宋体'>的</span><span lang=EN-US>OOP</span><span
+style='font-family:宋体'>之传统</span><span lang=EN-US>bless</span><span
+style='font-family:宋体'>和现代的</span><span lang=EN-US>MOO</span><span
+style='font-family:宋体'>简单比较</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Author</span><span style='font-family:宋体'>：</span><span
+lang=EN-US><a href="mailto:744891290@qq.com">744891290@qq.com</a> from qq Group
+PERL</span><span style='font-family:宋体'>学习交流</span><span lang=EN-US> 144539789</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>类</span> <span
+style='font-family:宋体'>是对象的总称。把对象抽象成类。这是</span><span lang=EN-US>oop</span><span
+style='font-family:宋体'>的最关键的地方。</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>类中产生对象。类是类型，一种新的数据类型。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Perl</span><span style='font-family:宋体'>如何定义新的数据类型。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>(</span><span style='font-family:宋体'>我建议大家学</span><span
+lang=EN-US>c++</span><span style='font-family:宋体'>的</span><span lang=EN-US>class</span><span
+style='font-family:宋体'>，然后再学</span><span lang=EN-US>perl</span><span
+style='font-family:宋体'>的对象。</span><span lang=EN-US>)</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Perl</span><span style='font-family:宋体'>中复杂的数据结构是通过引用构建的，</span><span
+lang=EN-US>perl</span><span style='font-family:宋体'>中没有</span><span lang=EN-US>class</span><span
+style='font-family:宋体'>关键词。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Perl</span><span style='font-family:宋体'>的对象是引用</span><span
+lang=EN-US>,</span><span style='font-family:宋体'>通常是</span><span lang=EN-US>hash</span><span
+style='font-family:宋体'>的引用，也可以是数组的引用。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>搞懂</span><span lang=EN-US>class</span><span
+style='font-family:宋体'>和</span><span lang=EN-US>package</span><span
+style='font-family:宋体'>的关系，</span><span lang=EN-US>class</span><span
+style='font-family:宋体'>要放到一个新的包中，</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>（约定俗成：一个文件一个</span><span
+lang=EN-US>package</span><span style='font-family:宋体'>一个</span><span
+lang=EN-US>class</span><span style='font-family:宋体'>。比较清晰）</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>为什么</span><span lang=EN-US>class</span><span
+style='font-family:宋体'>要放到一个新的包中？</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>放到包中可以封装方法，这个方法变成</span><span
+lang=EN-US>class</span><span style='font-family:宋体'>的方法。</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>放到包中，才知道怎么方便的声明各种</span><span
+lang=EN-US>class</span><span style='font-family:宋体'>的对象。</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>指定包名，然后调用包中的构建函数名（类方法）就能创造一个新的对象。</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>通过对象调用方法就是对象方法（实例方法）。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>为什么不直接在</span><span lang=EN-US>main</span><span
+style='font-family:宋体'>中声明一个</span><span lang=EN-US>class</span><span
+style='font-family:宋体'>？</span></p>
+
+<p class=MsoNormal><span lang=EN-US><br>
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span style='font-family:宋体'>再强调一下，一个</span><span
+lang=EN-US>Perl</span><span style='font-family:宋体'>类是仅是一个包而已。当你看到</span><span
+lang=EN-US>Perl</span><span style='font-family:宋体'>文档中提到</span><span
+lang=EN-US>“</span><span style='font-family:宋体'>类</span><span lang=EN-US>”</span><span
+style='font-family:宋体'>时，把它看作</span><span lang=EN-US>“</span><span
+style='font-family:宋体'>包</span><span lang=EN-US>”</span><span style='font-family:
+宋体'>就行了。</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>一个模块就是一个包，一个包就是一个类。在做其它事之前，先加入</span><span
+lang=EN-US>“1;”</span><span style='font-family:宋体'>这样一行，当你增加其它行时，记住保留</span><span
+lang=EN-US>“1;”</span><span style='font-family:宋体'>为最后一行。这是</span><span
+lang=EN-US>Perl</span><span style='font-family:宋体'>包的必需条件，否则该包就不会被</span><span
+lang=EN-US>Perl</span><span style='font-family:宋体'>处理。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<div style='border:none;border-bottom:solid windowtext 2.25pt;padding:0cm 0cm 1.0pt 0cm'>
+
+<p class=MsoNormal style='border:none;padding:0cm'><span style='font-family:
+宋体'>要想创建类，首先创建包</span></p>
+
+</div>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>##################Pearson.pm##</span><span
+style='font-family:宋体'>我喜欢这个形式</span><span lang=EN-US>###################</span></p>
+
+<p class=MsoNormal><span lang=EN-US>package Pearson;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>1;</span></p>
+
+<div style='border-top:solid windowtext 2.25pt;border-left:none;border-bottom:
+solid windowtext 2.25pt;border-right:none;padding:1.0pt 0cm 1.0pt 0cm'>
+
+<p class=MsoNormal style='border:none;padding:0cm'><span style='font-family:
+宋体'>也有人喜欢这个形式</span><span lang=EN-US>,</span><span style='font-family:宋体'>可以省去</span><span
+lang=EN-US>1</span><span style='font-family:宋体'>；</span> </p>
+
+<p class=MsoNormal style='border:none;padding:0cm'><span lang=EN-US>package
+Person</span></p>
+
+<p class=MsoNormal style='border:none;padding:0cm'><span lang=EN-US>{</span></p>
+
+<p class=MsoNormal style='border:none;padding:0cm'><span lang=EN-US>}</span></p>
+
+</div>
+
+<div style='border:none;border-bottom:solid windowtext 2.25pt;padding:0cm 0cm 1.0pt 0cm'>
+
+<p class=MsoNormal style='border:none;padding:0cm'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='border:none;padding:0cm'><span style='font-family:
+宋体'>一个文本一个</span><span lang=EN-US>package </span><span style='font-family:宋体'>我建议用第一种形式，</span></p>
+
+<p class=MsoNormal style='border:none;padding:0cm'><span style='font-family:
+宋体'>一个文本多个</span><span lang=EN-US>package</span><span style='font-family:宋体'>，那么用第二种形式。</span></p>
+
+</div>
+
+<p class=MsoNormal><span style='font-family:宋体'>接下来要添加构造函数，构造函数的作用是类生成对象。类方法（包方法）就是针对构造函数的。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>sub objnew</span></p>
+
+<p class=MsoNormal><span lang=EN-US>{</span></p>
+
+<p class=MsoNormal style='text-indent:15.75pt'><span lang=EN-US>&nbsp;my
+$class=shift @_;&nbsp; #</span><span style='font-family:宋体'>弹出报名</span></p>
+
+<p class=MsoNormal style='text-indent:15.75pt'><span lang=EN-US>&nbsp;my
+$self={</span></p>
+
+<p class=MsoNormal style='text-indent:15.75pt'><span lang=EN-US>name=&gt;undef;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-indent:21.0pt'><span lang=EN-US>};</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;bless $self, $class;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+#</span><span style='font-family:宋体'>第二个参数缺省的时候是当前包名</span></p>
+
+<p class=MsoNormal><span lang=EN-US>return $self;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>}</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<div style='border:none;border-bottom:solid windowtext 2.25pt;padding:0cm 0cm 1.0pt 0cm'>
+
+<p class=MsoNormal style='border:none;padding:0cm'><span lang=EN-US>&nbsp;</span></p>
+
+</div>
+
+<p class=MsoNormal><span style='font-family:宋体'>当然也有人不把构建函数放到</span><span
+lang=EN-US>package</span><span style='font-family:宋体'>中。</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>比如：</span><span lang=EN-US>&nbsp;
+<a href="http://carmark.iteye.com/blog/599944">http://carmark.iteye.com/blog/599944</a></span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>这样写个人感觉表达面向对象显得不够专业。</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>也可能作者仅仅是为了说明他对</span><span
+lang=EN-US>bless</span><span style='font-family:宋体'>的认识。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;&nbsp;&nbsp;bless($object,&nbsp;<span
+class=string>&quot;person&quot;</span>);&nbsp;&nbsp; #</span><span
+style='font-family:宋体'>第一个参数是对象引用，第二个参数是包名；然后把对象的应用和包关联起来，这个包中的对象。</span></p>
+
+<div style='border:none;border-bottom:solid windowtext 2.25pt;padding:0cm 0cm 1.0pt 0cm'>
+
+<p class=MsoNormal style='border:none;padding:0cm'><span lang=EN-US>&nbsp;</span></p>
+
+</div>
+
+<p class=MsoNormal><span style='font-family:宋体'>然后创建各种方法，一定要记住，传递的第一个参数是包的名字，所以一定要</span><span
+lang=EN-US>shift</span><span style='font-family:宋体'>第一个参数，得到包名或者对象名。</span> <span
+style='font-family:宋体'>包方法就是包名，对象方法就是对象名。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>sub addname</span></p>
+
+<p class=MsoNormal><span lang=EN-US>{</span></p>
+
+<p class=MsoNormal style='text-indent:20.25pt'><span lang=EN-US>my $self=shift;</span></p>
+
+<p class=MsoNormal style='text-indent:20.25pt'><span lang=EN-US>$self-&gt;{name}=$_[0];</span></p>
+
+<p class=MsoNormal style='text-indent:20.25pt'><span lang=EN-US>return 1;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>}</span></p>
+
+<p class=MsoNormal><span lang=EN-US>sub getname</span></p>
+
+<p class=MsoNormal><span lang=EN-US>{&nbsp; </span></p>
+
+<p class=MsoNormal style='text-indent:20.25pt'><span lang=EN-US>my $self=shift;</span></p>
+
+<p class=MsoNormal style='text-indent:20.25pt'><span lang=EN-US>return
+$self-&gt;{name};</span></p>
+
+<div style='border:none;border-bottom:solid windowtext 2.25pt;padding:0cm 0cm 1.0pt 0cm'>
+
+<p class=MsoNormal style='border:none;padding:0cm'><span lang=EN-US>}</span></p>
+
+</div>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<div style='border:none;border-bottom:solid windowtext 2.25pt;padding:0cm 0cm 1.0pt 0cm'>
+
+<p class=MsoNormal style='border:none;padding:0cm'><span style='font-family:
+宋体'>想写一个实用性的</span><span lang=EN-US>class</span><span style='font-family:宋体'>，但想不到就写人吧。</span></p>
+
+</div>
+
+<p class=MsoNormal style='text-indent:15.75pt'><span style='font-family:宋体'>通过</span><span
+lang=EN-US>perl</span><span style='font-family:宋体'>自己的</span><span lang=EN-US>bless</span><span
+style='font-family:宋体'>构建</span><span lang=EN-US>class</span><span
+style='font-family:宋体'>人，</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>这个类中包含人的各种属性，姓名，性别，年龄等各种属性，以</span><span
+lang=EN-US>hash</span><span style='font-family:宋体'>的形式存在</span><span
+lang=EN-US>class</span><span style='font-family:宋体'>中。</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>构造函数的名字是任意起的名字，不一定叫</span><span
+lang=EN-US>new</span><span style='font-family:宋体'>，尽管大家习惯起名字为</span><span
+lang=EN-US>new</span><span style='font-family:宋体'>，建议大家用</span><span
+lang=EN-US>new</span><span style='font-family:宋体'>。</span><span lang=EN-US>bless</span><span
+style='font-family:宋体'>才是</span><span lang=EN-US>perl</span><span
+style='font-family:宋体'>中构建</span><span lang=EN-US>class</span><span
+style='font-family:宋体'>的最关键函数。</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>类的变量的名字也不一定叫</span><span
+lang=EN-US>$class,$self.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Sub new</span></p>
+
+<p class=MsoNormal><span lang=EN-US>{</span></p>
+
+<p class=MsoNormal><span lang=EN-US>my $class=shift;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>my $self={</span></p>
+
+<p class=MsoNormal><span lang=EN-US>name=&gt;undef,</span></p>
+
+<p class=MsoNormal><span lang=EN-US>sex=&gt;undef,</span></p>
+
+<p class=MsoNormal><span lang=EN-US>age=&gt;undef,</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>}</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Bless $self,$class;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Return $self;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>}</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>############</span><span style='font-family:
+宋体'>以上是传统的创建</span><span lang=EN-US>class</span><span style='font-family:宋体'>对象的方法</span><span
+lang=EN-US>#########</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>###########</span><span style='font-family:
+宋体'>一下是用</span><span lang=EN-US>MOO</span><span style='font-family:宋体'>创建</span><span
+lang=EN-US>class#################</span></p>
+
+<p class=MsoNormal><span lang=EN-US>MOO </span><span style='font-family:宋体'>掩藏了</span><span
+lang=EN-US>obj</span><span style='font-family:宋体'>的</span><span lang=EN-US>hash</span><span
+style='font-family:宋体'>形式，直接通过</span><span lang=EN-US>has </span><span
+style='font-family:宋体'>创建</span><span lang=EN-US>key value</span></p>
+
+<pre><span lang=EN-US>has attr <span class=shsymbol>=&gt;</span> <span
+class=shsymbol>(</span></span></pre><pre><span lang=EN-US>&nbsp;&nbsp; is <span
+class=shsymbol>=&gt;</span> <span class=shstring>'ro'</span><span
+class=shsymbol>,</span></span></pre><pre><span lang=EN-US> <span
+class=shsymbol>);</span></span></pre>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体'>has&nbsp;brand&nbsp;=&gt;&nbsp;(<br>
+&nbsp;&nbsp;&nbsp;is&nbsp;&nbsp;=&gt;&nbsp;'ro',<br>
+&nbsp;&nbsp;&nbsp;isa&nbsp;=&gt;&nbsp;sub&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;die&nbsp;&quot;Only&nbsp;SWEET-TREATZ&nbsp;supported!&quot;&nbsp;unless&nbsp;$_[0]&nbsp;eq&nbsp;'SWEET-TREATZ'<br>
+&nbsp;&nbsp;&nbsp;},<br>
+&nbsp;)</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体'>=&gt;</span><span style='font-size:
+12.0pt;font-family:宋体'>在<span lang=EN-US>Perl5</span>里只是<span lang=EN-US>,</span>的链接<span
+lang=EN-US>alias</span>，特殊的‘，’号；并不是真的只用于<span lang=EN-US>key-value</span>的定义 。</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-size:
+12.0pt;font-family:宋体'>另外也告诉了我们<span lang=EN-US>has</span>其实是函数。</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-size:
+12.0pt;font-family:宋体'>那<span lang=EN-US>brand</span>就是参数了。</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-size:
+12.0pt;font-family:宋体'>我们可以这样显式的调用<span lang=EN-US>has</span>；</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体'>has(&quot;brand&quot;,'is','ro','isa',sub{});
+</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-size:
+12.0pt;font-family:宋体'>但是这样不好看。</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体'>value</span><span style='font-size:
+12.0pt;font-family:宋体'>当中的<span lang=EN-US>is</span>是必须的选项，所以我们对于每一个<span
+lang=EN-US>key</span>都要加<span lang=EN-US>is</span>这个选项。</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体'>is</span><span style='font-size:12.0pt;
+font-family:宋体'>这个选项的值有：<code><span lang=EN-US>ro</span></code></span><span
+lang=EN-US>, </span><code><span lang=EN-US style='font-size:12.0pt'>lazy</span></code><span
+lang=EN-US>, </span><code><span lang=EN-US style='font-size:12.0pt'>rwp</span></code><span
+lang=EN-US> or </span><code><span lang=EN-US style='font-size:12.0pt'>rw</span></code><span
+lang=EN-US>.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+宋体'>他们的含义分别是</span></p>
+
+<p><code><span lang=EN-US>ro</span></code><span lang=EN-US> </span>的这个功能会让写访问器失效<span
+lang=EN-US>,</span>如果你想写它的话。</p>
+
+<p>这个用于当设置了 <code><span lang=EN-US>lazy</span></code><span lang=EN-US> </span>为<span
+lang=EN-US> 1</span>按需生成属性时。</p>
+
+<p><code><span lang=EN-US>rwp</span></code><span lang=EN-US> </span>会生成一个象 <code><span
+lang=EN-US>ro</span></code><span lang=EN-US> </span>一样的访问器，但在写的时候，在内部可以写入，外部调用时不能写入只能读取<span
+lang=EN-US>.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+宋体'>这个</span> <code><span lang=EN-US style='font-size:12.0pt'>rw</span></code><span
+lang=EN-US> </span><span style='font-family:宋体'>生成标准的</span><span lang=EN-US>
+getter/setter </span><span style='font-family:宋体'>来让属性可以读写</span><span
+lang=EN-US>.</span></p>
+
+<div style='border-top:solid windowtext 2.25pt;border-left:none;border-bottom:
+solid windowtext 2.25pt;border-right:none;padding:1.0pt 0cm 1.0pt 0cm'>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+style='font-family:宋体'>另一个常用选项是</span><span lang=EN-US>isa </span><span
+style='font-family:宋体'>，他的</span><span lang=EN-US>value</span><span
+style='font-family:宋体'>是匿名函数。</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+style='font-family:宋体'>使用</span><span lang=EN-US>MOO</span><span
+style='font-family:宋体'>的好处之一，自动带</span><span lang=EN-US>new</span><span
+style='font-family:宋体'>函数，不需要我们定义</span><span lang=EN-US>new</span><span
+style='font-family:宋体'>函数了，</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+style='font-family:宋体'>参数可以是匿名</span><span lang=EN-US>hash</span><span
+style='font-family:宋体'>，也可以是键值对</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+lang=EN-US>Foo::Bar-&gt;new( attr1 =&gt; 3 );</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+lang=EN-US>or</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+lang=EN-US>&nbsp;Foo::Bar-&gt;new({ attr1 =&gt; 3 });</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+lang=EN-US>&nbsp;</span></p>
+
+</div>
+
+<div style='border-top:solid windowtext 2.25pt;border-left:none;border-bottom:
+solid windowtext 2.25pt;border-right:none;padding:0cm 0cm 1.0pt 0cm'>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+lang=EN-US>Moo</span><span style='font-family:宋体'>的公共函数对于新手只需要先掌握一个</span><span
+lang=EN-US>new</span><span style='font-family:宋体'>。</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+lang=EN-US>Moo</span><span style='font-family:宋体'>来创建模块的时候后，需要了解这几个子例程</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+style='font-family:宋体'>首先应该是</span><span lang=EN-US>has</span><span
+style='font-family:宋体'>；前面讲过了。有了这些知识</span><span lang=EN-US>,</span><span
+style='font-family:宋体'>我们就可以简单的创建模块了</span><span lang=EN-US>.</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+lang=EN-US>&nbsp;</span></p>
+
+</div>
+
+<div style='border:none;border-bottom:solid windowtext 2.25pt;padding:0cm 0cm 1.0pt 0cm'>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm;
+padding-bottom:1.0pt;border-bottom:2.25pt solid windowtext'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+style='font-family:宋体'>传统</span><span lang=EN-US>bless </span><span
+style='font-family:宋体'>构建</span><span lang=EN-US>class</span><span
+style='font-family:宋体'>的时候，如何实现继承。</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+style='font-family:宋体'>继承哪些东西。</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+style='font-family:宋体'>继承的不仅仅是方法，还有数据结构。</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+style='font-family:宋体'>只需要通过</span><span lang=EN-US>@ISA </span><span
+style='font-family:宋体'>就能实现继承。</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+style='font-family:宋体'>如果需要编译，可以通过</span><span lang=EN-US>use base</span><span
+style='font-family:宋体'>来继承。</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+lang=EN-US>#</span><span style='font-family:宋体'>通过</span><span lang=EN-US>@ISA</span><span
+style='font-family:宋体'>继承</span><span lang=EN-US>Person</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+lang=EN-US style='color:red;background:yellow'>#@ISA </span><span
+style='font-family:宋体;color:red;background:yellow'>必须和</span><span lang=EN-US
+style='color:red;background:yellow'>require </span><span style='font-family:
+宋体;color:red;background:yellow'>联用</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+lang=EN-US>require Person;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+lang=EN-US>@ISA=qw(Person);</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+lang=EN-US>&nbsp;</span></p>
+
+</div>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-size:
+12.0pt;font-family:宋体'>传统的<span lang=EN-US>bless</span>来继承，必须显式的构建<span
+lang=EN-US>new</span>函数，<span lang=EN-US>$child=Parent-&gt;new()</span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-size:
+12.0pt;font-family:宋体'>其中子类的<span lang=EN-US>obj </span>是先由父类生成的。</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US>sub new
+{<br>
+&nbsp;&nbsp; my $type = shift;<br>
+&nbsp;&nbsp; <b><span style='background:yellow'>$this = Bean-&gt;new();</span>&nbsp;&nbsp;
+#Bean </b></span><b><span style='font-family:宋体'>是父类，非常重要</span></b></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US>&nbsp;&nbsp;
+$this-&gt;{'Coffee'} = 'Instant';<br>
+&nbsp;&nbsp; bless $this, $type;<br>
+&nbsp;&nbsp; return $this;<br>
+&nbsp;&nbsp; }</span><span lang=EN-US style='font-size:12.0pt;font-family:宋体'><br>
+<br>
+</span></p>
+
+<div style='border:none;border-bottom:solid windowtext 2.25pt;padding:0cm 0cm 1.0pt 0cm'>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+lang=EN-US>&nbsp;</span></p>
+
+</div>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+宋体'>继承只能继承所有的东西。不能选择性的继承。但是你可以继承以后重写父类中的方法，或者添加新的方法。继承是从共性到个性的过程，父亲有的东西儿子都有。儿子有的东西，父亲不一定有。</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-family:
+宋体'>可以把人看成父类，学生看成子类。</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US>use base
+</span><span style='font-family:宋体'>和</span><span lang=EN-US>@ISA</span><span
+style='font-family:宋体'>继承，有什么区别吗？</span></p>
+
+<div style='border:none;border-bottom:solid windowtext 2.25pt;padding:0cm 0cm 1.0pt 0cm'>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+lang=EN-US><img border=0 width=519 height=320 src="MOO.files/image001.jpg"></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+lang=EN-US>use base</span><span style='font-family:宋体'>好点，尤其在需要编译时测试情况下。</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+style='font-family:宋体'>看到了</span><span lang=EN-US> Begin</span><span
+style='font-family:宋体'>，就要想到编译，第一个是运行是加载，第二个是编译后再运行。</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+lang=EN-US>&nbsp;</span></p>
+
+</div>
+
+<div style='border-top:solid windowtext 2.25pt;border-left:none;border-bottom:
+solid windowtext 2.25pt;border-right:none;padding:1.0pt 0cm 1.0pt 0cm'>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+style='font-family:宋体'>制作包的时候，为了让使用人可以直接使用里面的函数，需要</span><span lang=EN-US>Export</span><span
+style='font-family:宋体'>帮忙，</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+style='font-family:宋体'>在创作包的时候，加入以下几句，</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+lang=EN-US>require Exporter;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+lang=EN-US>use base qw(Exporter);</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+lang=EN-US>use vars qw(@EXPORT);</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+lang=EN-US>@EXPORT = qw(downcasmf); #</span><span style='font-family:宋体'>导出的函数这些函数应该是独立于包的，不是包方法也不是类方法。第一个参数不会默认传递包名，方法名。</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+lang=EN-US>&nbsp;</span></p>
+
+</div>
+
+<div style='border:none;border-bottom:solid windowtext 2.25pt;padding:0cm 0cm 1.0pt 0cm'>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+style='font-family:宋体'>闭包中的变量性质和</span><span lang=EN-US>state</span><span
+style='font-family:宋体'>的变量的性质很像。</span><span lang=EN-US style='font-size:12.0pt;
+font-family:宋体'>::</span><span style='font-size:12.0pt;font-family:宋体'>前面的都是<span
+lang=EN-US>namespace</span>，最后是<span lang=EN-US>package </span></span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+lang=EN-US style='font-size:12.0pt;font-family:宋体'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;border:none;padding:0cm'><span
+lang=EN-US>&nbsp;</span></p>
+
+</div>
+
+<p><span lang=EN-US>sub new { </span></p>
+
+<p><span lang=EN-US>my $type = shift;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+#</span>弹出包名<span lang=EN-US><br>
+my %parm = @_;<br>
+my $this = [];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #</span>对象是数组的引用<span lang=EN-US><br>
+$this-&gt;[0] = $parm{'Name'};<br>
+$this-&gt;[1] = $parm{'x'};<br>
+$this-&gt;[2] = $parm{'y'};<br>
+bless $this, $type; </span></p>
+
+<p><span lang=EN-US>return $this;</span></p>
+
+<p><span lang=EN-US>} </span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>对象也可以是数组的引用</span></p>
+
+<div style='border:none;border-bottom:solid windowtext 2.25pt;padding:0cm 0cm 1.0pt 0cm'>
+
+<p class=MsoNormal style='border:none;padding:0cm'><span lang=EN-US>&nbsp;</span></p>
+
+</div>
+
+<p class=MsoNormal><span lang=EN-US>package </span><span style='font-family:
+宋体'>有</span><span lang=EN-US>2</span><span style='font-family:宋体'>种常用语法</span><span
+lang=EN-US>,</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>语法</span><span lang=EN-US>1</span></p>
+
+<p class=MsoNormal><span lang=EN-US>package MM{};</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>语法</span><span lang=EN-US>2</span></p>
+
+<p class=MsoNormal><span lang=EN-US>package MM;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>1;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>#</span><span style='font-family:宋体'>详情见</span></p>
+
+<p class=MsoNormal><span lang=EN-US><a
+href="http://perldoc.perl.org/functions/package.html">http://perldoc.perl.org/functions/package.html</a></span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>这是三斗给我的代码</span></p>
+
+<p class=MsoNormal><span lang=EN-US><img border=0 width=554 height=416 id="图片 1"
+src="MOO.files/image002.jpg"></span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Role </span><span style='font-family:宋体'>是保留关键字</span>
+<span style='font-family:宋体'>还是普通的</span><span lang=EN-US>package</span><span
+style='font-family:宋体'>？？？</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><a
+href="http://search.cpan.org/%7Ehaarg/Moo-1.006001/lib/Moo/Role.pm">Moo::Role</a>
+cleans up its own imported methods and any imports declared before the </span><code><span
+lang=EN-US style='font-size:12.0pt'>use Moo::Role</span></code><span
+lang=EN-US> statement automatically. Anything imported after </span><code><span
+lang=EN-US style='font-size:12.0pt'>use Moo::Role</span></code><span
+lang=EN-US> will be composed into consuming packages.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Moose</span><span style='font-family:宋体'>的文档是最详细的，强烈建议大家直接看</span><span
+lang=EN-US>Moose</span><span style='font-family:宋体'>的文档，但是使用</span><span
+lang=EN-US>Moo</span><span style='font-family:宋体'>；</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>一开始我多</span><span lang=EN-US>Role</span><span
+style='font-family:宋体'>不理解，找</span><span lang=EN-US>Moo</span><span
+style='font-family:宋体'>找不到详细资料，直接找</span><span lang=EN-US>Moose</span><span
+style='font-family:宋体'>；</span></p>
+
+<p class=MsoNormal><span lang=EN-US><a
+href="https://metacpan.org/pod/distribution/Moose/lib/Moose/Manual/Roles.pod">https://metacpan.org/pod/distribution/Moose/lib/Moose/Manual/Roles.pod</a></span><span
+style='font-family:宋体'>；</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>这里介绍的非常详细。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Role </span><span style='font-family:宋体'>不是</span><span
+lang=EN-US>class</span><span style='font-family:宋体'>，所以不能被实例化（对象化）；</span><span
+lang=EN-US>Role</span><span style='font-family:宋体'>是用来存放各个</span><span
+lang=EN-US>class</span><span style='font-family:宋体'>的公共方法的和属性的。</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>只要在</span><span lang=EN-US>package</span><span
+style='font-family:宋体'>中出现</span><span lang=EN-US>use Moo::Role,</span><span
+style='font-family:宋体'>它就不是</span><span lang=EN-US>class</span><span
+style='font-family:宋体'>。所以</span><span lang=EN-US>Foo::Role </span><span
+style='font-family:宋体'>不是</span><span lang=EN-US>class</span><span
+style='font-family:宋体'>。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>around </span><span style='font-family:
+宋体'>关键词出现同名函数的时候，使用</span><span lang=EN-US>around</span><span style='font-family:
+宋体'>定义的函数，重写同名函数。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><img border=0 width=553 height=456 id="图片 2"
+src="MOO.files/image003.jpg"></span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>这里的脚本多了一个</span><span
+lang=EN-US>requires</span><span style='font-family:宋体'>，注意不是</span><span
+lang=EN-US>require</span><span style='font-family:宋体'>。</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-size:
+12.0pt;font-family:宋体'>从<span lang=EN-US>namespace</span>中选择函数放到<span
+lang=EN-US>role</span>中作为公共函数。</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体'>requires ’m3’;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-size:
+12.0pt;font-family:宋体'>如果你的类想使用公共方法<span lang=EN-US>Role</span>，你的类中必须定义<span
+lang=EN-US>m3</span>；否则会得到一个异常。</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体'>requires </span><span style='font-size:
+12.0pt;font-family:宋体'>往往和<span lang=EN-US>after </span>联用。</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体'>requires ‘m3’;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体'>after m3=sub{};</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-size:
+12.0pt;font-family:宋体'>执行<span lang=EN-US>m3</span>的时候，会先执行<span lang=EN-US>class</span>中的<span
+lang=EN-US>m3</span>，然后回调继续执行<span lang=EN-US>Role</span>中的<span lang=EN-US>m3</span>；</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:12.25pt;
+background:#EEEEEE;vertical-align:baseline'><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;color:black'>use 5.10.1;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:12.25pt;
+background:#EEEEEE;vertical-align:baseline'><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:12.25pt;
+background:#EEEEEE;vertical-align:baseline'><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;color:black'>package Foo {</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:12.25pt;
+background:#EEEEEE;vertical-align:baseline'><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;color:black'>&nbsp;&nbsp;&nbsp; use Moo;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:12.25pt;
+background:#EEEEEE;vertical-align:baseline'><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;color:black'>&nbsp;&nbsp;&nbsp; has a =&gt; ( is
+=&gt; 'rw' );</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:12.25pt;
+background:#EEEEEE;vertical-align:baseline'><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;color:black'>&nbsp;&nbsp;&nbsp; sub m1 { return
+&quot;m1&quot; }</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:12.25pt;
+background:#EEEEEE;vertical-align:baseline'><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;color:black'>}</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:12.25pt;
+background:#EEEEEE;vertical-align:baseline'><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:12.25pt;
+background:#EEEEEE;vertical-align:baseline'><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;color:black'>package Foo::Role {</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:12.25pt;
+background:#EEEEEE;vertical-align:baseline'><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:12.25pt;
+background:#EEEEEE;vertical-align:baseline'><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;color:black'>&nbsp;&nbsp;&nbsp; use Moo::Role;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:12.25pt;
+background:#EEEEEE;vertical-align:baseline'><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:12.25pt;
+background:#EEEEEE;vertical-align:baseline'><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;color:black'>&nbsp;&nbsp;&nbsp; sub m2 { return
+&quot;m2&quot; }</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:12.25pt;
+background:#EEEEEE;vertical-align:baseline'><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:12.25pt;
+background:#EEEEEE;vertical-align:baseline'><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;color:black'>&nbsp;&nbsp;&nbsp; around 'm1' =&gt;
+sub {</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:12.25pt;
+background:#EEEEEE;vertical-align:baseline'><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+# original Foo::m1</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:12.25pt;
+background:#EEEEEE;vertical-align:baseline'><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+my $orig = shift;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:12.25pt;
+background:#EEEEEE;vertical-align:baseline'><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+return &quot;wrapped: &quot; . $orig-&gt;(@_);</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:12.25pt;
+background:#EEEEEE;vertical-align:baseline'><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;color:black'>&nbsp;&nbsp;&nbsp; }</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:12.25pt;
+background:#EEEEEE;vertical-align:baseline'><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;color:black'>}</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:12.25pt;
+background:#EEEEEE;vertical-align:baseline'><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:12.25pt;
+background:#EEEEEE;vertical-align:baseline'><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;color:black'>use Role::Tiny;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:12.25pt;
+background:#EEEEEE;vertical-align:baseline'><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:12.25pt;
+background:#EEEEEE;vertical-align:baseline'><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;color:black'>my $foo = Foo-&gt;new;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:12.25pt;
+background:#EEEEEE;vertical-align:baseline'><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;color:black'>say $foo-&gt;m1;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:12.25pt;
+background:#EEEEEE;vertical-align:baseline'><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;color:black'>Role::Tiny-&gt;apply_roles_to_object(
+$foo, 'Foo::Role' );</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:12.25pt;
+background:#EEEEEE;vertical-align:baseline'><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;color:black'>say $foo-&gt;m2;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:12.25pt;
+background:#EEEEEE;vertical-align:baseline'><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;color:black'>say $foo-&gt;m1;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:12.25pt;
+background:#EEEEEE;vertical-align:baseline'><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;color:black'>my $boo = Foo-&gt;new;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:12.25pt;
+background:#EEEEEE;vertical-align:baseline'><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:12.25pt;
+background:#EEEEEE;vertical-align:baseline'><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;color:black'>say $boo-&gt;m1;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:12.25pt;
+background:#EEEEEE;vertical-align:baseline'><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;color:black'>say $boo-&gt;m2;</span></p>
+
+<p class=MsoNormal align=left style='margin-bottom:12.0pt;text-align:left;
+line-height:12.25pt;background:white;vertical-align:baseline'><span lang=EN-US
+style='font-size:9.5pt;font-family:"Arial","sans-serif";color:black'>You get:</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:12.25pt;
+background:#EEEEEE;vertical-align:baseline'><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;color:black'>m1</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:12.25pt;
+background:#EEEEEE;vertical-align:baseline'><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;color:black'>m2</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:12.25pt;
+background:#EEEEEE;vertical-align:baseline'><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;color:black'>wrapped: m1</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:12.25pt;
+background:#EEEEEE;vertical-align:baseline'><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;color:black'>m1</span></p>
+
+<p class=MsoNormal align=left style='text-align:left;line-height:12.25pt;
+background:#EEEEEE;vertical-align:baseline'><span lang=EN-US style='font-size:
+9.5pt;font-family:Consolas;color:black'>Can't locate object method
+&quot;m2&quot; via package &quot;Foo&quot; at moo.pm line 49.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>从运行的结果，我们可以看出</span><span
+lang=EN-US>Role</span><span style='font-family:宋体'>：：</span><span lang=EN-US>Tiny</span><span
+style='font-family:宋体'>的作用</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>他和</span><span lang=EN-US> with
+</span><span style='font-family:宋体'>的区别是</span></p>
+
+<p class=MsoNormal><span lang=EN-US>with </span><span style='font-family:宋体'>是放在</span><span
+lang=EN-US>package</span><span style='font-family:宋体'>中，作用于整个</span><span
+lang=EN-US>class</span><span style='font-family:宋体'>。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Role ::Tiny </span><span style='font-family:
+宋体'>是针对特定的</span><span lang=EN-US>obj</span><span style='font-family:宋体'>的。</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>作用是加载公共</span><span lang=EN-US>Role</span><span
+style='font-family:宋体'>（函数和属性）。</span></p>
+
+<div style='border:none;border-bottom:solid windowtext 2.25pt;padding:0cm 0cm 1.0pt 0cm'>
+
+<p class=MsoNormal style='border:none;padding:0cm'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='border:none;padding:0cm'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='border:none;padding:0cm'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='border:none;padding:0cm'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='border:none;padding:0cm'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='border:none;padding:0cm'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='border:none;padding:0cm'><span lang=EN-US>&nbsp;</span></p>
+
+</div>
+
+<p class=MsoNormal><span style='font-family:宋体'>子类继承了父类</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>父类的名字可以改成子类的名字，脚本应该能正常运行。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>##################################</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>MOO </span><span style='font-family:宋体'>实现继承</span><span
+lang=EN-US style='font-size:12.0pt;font-family:宋体'>extends</span><span
+style='font-size:12.0pt;font-family:宋体'>和<span lang=EN-US>with&nbsp;</span>都是继承，</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:宋体'>其中<span
+lang=EN-US>extends&nbsp;</span>继承一个，<span lang=EN-US>with&nbsp;</span>能继承多个 。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;font-family:宋体'>extends
+</span><span style='font-size:12.0pt;font-family:宋体'>只能有一个父类。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;font-family:宋体'>with
+</span><span style='font-size:12.0pt;font-family:宋体'>的参数还可以是<span lang=EN-US>Role</span>。</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;font-family:宋体'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:12.0pt;font-family:宋体'>####</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;font-family:宋体'>大家可以看看我<span
+lang=EN-US>example</span>中的简单示例代码。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>##</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><a
+href="http://shadow.cat/blog/matt-s-trout/moo-versus-any-moose/">http://shadow.cat/blog/matt-s-trout/moo-versus-any-moose/</a></span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><a
+href="http://blog.celogeek.com/201312/387/proper-usage-of-the-roles-in-perl/">http://blog.celogeek.com/201312/387/proper-usage-of-the-roles-in-perl/</a></span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><a
+href="http://stackoverflow.com/questions/17037844/dynamic-moo-object-methods-change">http://stackoverflow.com/questions/17037844/dynamic-moo-object-methods-change</a></span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><a
+href="http://bbs.chinaunix.net/thread-4094356-1-1.html">http://bbs.chinaunix.net/thread-4094356-1-1.html</a></span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><a
+href="http://cpan.php-oa.com/perldoc/Moo/">http://cpan.php-oa.com/perldoc/Moo/</a></span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US><a
+href="http://net.pku.edu.cn/~yhf/tutorial/perl/perl_13.html">http://net.pku.edu.cn/~yhf/tutorial/perl/perl_13.html</a></span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>特别感谢</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>三斗室，人特别好。</span></p>
+
+<p class=MsoNormal style='line-height:19.7pt'><span style='font-family:宋体'>灰灰在群里积极帮助大家，我的</span><span
+lang=EN-US>perl</span><span style='font-family:宋体'>是这个群</span><span lang=EN-US>PERL</span><span
+style='font-family:宋体'>学习交流</span><span lang=EN-US> 144539789</span><span
+style='font-family:宋体'>教给我的，从一个不知道怎么运行</span><span lang=EN-US>perl</span><span
+style='font-family:宋体'>脚本的人，一步步步入了</span><span lang=EN-US>perl</span><span
+style='font-family:宋体'>的不归路。为了表达我的谢意，我只有不停的在群里帮助更多的人成长。超爱</span><span
+lang=EN-US>perl</span><span style='font-family:宋体'>，希望</span><span lang=EN-US>perl</span><span
+style='font-family:宋体'>中国也能像</span><span lang=EN-US>python</span><span
+style='font-family:宋体'>那样火起来。</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>没有富凯的博客就没有我的提高</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>写脚本的注意事项：</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-size:
+12.0pt;font-family:宋体'>为什么<span lang=EN-US>.pm</span>里没有</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体'>use&nbsp;warnings;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span lang=EN-US
+style='font-size:12.0pt;font-family:宋体'>use&nbsp;strict;</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-size:
+12.0pt;font-family:宋体'>如果<span lang=EN-US>use</span>了这个错肯定早就报出来了。</span></p>
+
+<p class=MsoNormal align=left style='text-align:left'><span style='font-size:
+12.0pt;font-family:宋体'>不管哪个代码里，都一定记得带上这两行。 </span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>
