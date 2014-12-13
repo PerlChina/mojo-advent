@@ -1,6 +1,6 @@
 # Tie::IxHash
 
-众所周知，希哈 Hash 是无序的。但是有时候我们可能也需要一个有序的 Hash，这时候 [Tie::IxHash](https://metacpan.org/pod/Tie::IxHash) 就可以帮上忙了。
+众所周知，哈希 Hash 是无序的。但是有时候我们可能也需要一个有序的 Hash，这时候 [Tie::IxHash](https://metacpan.org/pod/Tie::IxHash) 就可以帮上忙了。
 
 ## 有序的 JSON 输出
 
