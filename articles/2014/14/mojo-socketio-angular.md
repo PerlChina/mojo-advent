@@ -1,6 +1,6 @@
 # Mojolicious + SocketIO + AngularJS
 
-今天本来是准备随便写点跟 Web 开发相关的话题，毕竟今年 YAPC 上最大的声音就是 SaywerX 的[“CGI.pm must DIE!”](www.youtube.com/watch?v=tu6_3fZbWYw)。正在犹豫是介绍 [Mojolicious](https://metacpan.org/pod/Mojolicious) 还是 [PocketIO](https://metacpan.org/pod/PocketIO) 模块的时候，偶然在 gist 上看到一个单文件程序，结合了 Mojolicious、socket.io 和 angular.js 三大框架，简直就是任性。那么好，今天就拿这个做例子说一说好了：
+今天本来是准备随便写点跟 Web 开发相关的话题，毕竟今年 YAPC 上最大的声音就是 SaywerX 的[“CGI.pm must DIE!”](http://www.youtube.com/watch?v=tu6_3fZbWYw)。正在犹豫是介绍 [Mojolicious](https://metacpan.org/pod/Mojolicious) 还是 [PocketIO](https://metacpan.org/pod/PocketIO) 模块的时候，偶然在 gist 上看到一个单文件程序，结合了 Mojolicious、socket.io 和 angular.js 三大框架，简直就是任性。那么好，今天就拿这个做例子说一说好了：
 
 ## Mojolicious::Lite 的 DSL
 
