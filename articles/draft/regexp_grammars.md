@@ -303,7 +303,7 @@ if ( $content =~ $parser ) {
 ## 后记
 本文中的三段代码都是可以直接运行的。虽然并不一个完整的FASTA 文件 Parser。需要做些细节的改动，如果你手头有FATSTA 格式的文件，不妨再文中代码基础上，做改进。主要是要对 dan，rna 和 aa 加 action。
 
-另外，Regexp::Grammars 有50多页的文档，最主要的没有提到的可能是Grammar 也可以继承的。
+另外，Regexp::Grammars 有50多页的文档，本文最主要的没有提到的可能是Grammar 也可以继承的。
 
 ### 作者  
 
