@@ -12,12 +12,12 @@
 <li>Day 01 - <img src="http://tp3.sinaimg.cn/1035836154/180/5628427287/1"> <a href='/calendar/2014/01/'>Rexify</a></li>
 <li>Day 02 - <img src="https://secure.gravatar.com/avatar/7ead820d92fdf153bd59ea58619e1744?s=30&amp;d=identicon"> <a href='/calendar/2014/02/'>Lingua::Identify::CLD</a></li>
 <li>Day 03 - <img src="https://secure.gravatar.com/avatar/7ead820d92fdf153bd59ea58619e1744?s=30&amp;d=identicon"> <a href='/calendar/2014/03/'>unidecode</a></li>
-<li>Day 04 - <img src="https://secure.gravatar.com/avatar/5086cee3f50b959e95526fe39343646b?s=30&amp;d=identicon"> <a href='/calendar/2014/04/'>DDP & DDS</a></li>
+<li>Day 04 - <img src="https://avatars1.githubusercontent.com/u/7497148?v=3&s=130"> <a href='/calendar/2014/04/'>DDP & DDS</a></li>
 <li>Day 05 - <img src="https://secure.gravatar.com/avatar/694d53039b1ff43bdfcd2033c90a1647.png?s=30"> <a href='/calendar/2014/05/'>Perl Tricks</a></li>
 <li>Day 06 - <img src="https://secure.gravatar.com/avatar/7ead820d92fdf153bd59ea58619e1744?s=30&amp;d=identicon"> <a href='/calendar/2014/06/'>Milla</a></li>
 <li>Day 07 - <img src="https://secure.gravatar.com/avatar/694d53039b1ff43bdfcd2033c90a1647.png?s=30"> <a href='/calendar/2014/07/'>postderef</a></li>
 <li>Day 08 - <img src="http://tp3.sinaimg.cn/1035836154/180/5628427287/1"> <a href='/calendar/2014/08/'>Future</a></li>
-<li>Day 09 - <img src="https://secure.gravatar.com/avatar/5086cee3f50b959e95526fe39343646b?s=30&amp;d=identicon"> <a href='/calendar/2014/09/'>Webqq::Client</a></li>
+<li>Day 09 - <img src="https://avatars1.githubusercontent.com/u/7497148?v=3&s=130"> <a href='/calendar/2014/09/'>Webqq::Client</a></li>
 <li>Day 10 - <img src="https://secure.gravatar.com/avatar/7ead820d92fdf153bd59ea58619e1744?s=30&amp;d=identicon"> <a href='/calendar/2014/10/'>Keyczar</a></li>
 <li>Day 11 - <img src="http://tp3.sinaimg.cn/1035836154/180/5628427287/1"> <a href='/calendar/2014/11/'>autobox</a></li>
 <li>Day 12 - <img src="http://tp3.sinaimg.cn/1035836154/180/5628427287/1"> <a href='/calendar/2014/12/'>reply</a></li>
@@ -25,6 +25,7 @@
 <li>Day 14 - <img src="http://tp3.sinaimg.cn/1035836154/180/5628427287/1"> <a href='/calendar/2014/14/'>Mojolicious, socket.io and Angular.JS</a></li>
 <li>Day 15 - <img src="http://tp3.sinaimg.cn/1035836154/180/5628427287/1"> <a href='/calendar/2014/15/'>Devel::DidYouMean</a></li>
 <li>Day 16 - <img src="https://secure.gravatar.com/avatar/694d53039b1ff43bdfcd2033c90a1647.png?s=30"> <a href='/calendar/2014/16/'>Regexp::Grammar</a></li>
+<li>Day 17 - <img src="https://avatars1.githubusercontent.com/u/106245?v=3&s=460"> <a href='/calendar/2014/17/'>File::ChangeNotify</a></li>
 </ul>
 
 <p>Please fork <a href='https://github.com/PerlChina/mojo-advent'>https://github.com/PerlChina/mojo-advent</a> and send us pull requests!</p>
