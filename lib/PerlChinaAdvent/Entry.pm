@@ -53,12 +53,12 @@ sub render_pod {
 
 sub render_markdown {
     my ($file) = @_;
-    my $content = decode_utf8(slurp($file));
+    my $content = slurp($file);
     my $title = (split(/[\r\n]+/, $content))[0]; # default first line as title
     $title =~ s/^\#\s*//;
     return {
         advent_title => $title,
-        body  => markdown($content)
+        body  => markdown(decode_utf8($content))
     };
 }
 
