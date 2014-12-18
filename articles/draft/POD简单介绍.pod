@@ -1,0 +1,186 @@
+
+=head1 POD的简单介绍
+
+POD 让代码文档更容易，简单事情简单做，复杂的事情也可以做。
+
+=head2 注意事项
+
+=over 4
+
+=item 1
+
+命令行段落上下都要留一个空行
+    
+=item 2
+    
+回到代码，用=cut结束pod模式
+    
+=item 3
+
+注释写到上面，先写fun1 的注释，然后写fun1的代码，再fun2注释，fun2代码
+
+=back
+
+=head2 pm中的说明文档
+
+pm中需要包含这几个部分
+
+=over 4
+
+=item 1 NAME 包的名字
+
+=item 2 SYNOPSIS 简要的模块使用范例
+
+=item 3 DESCRIPTION  详细的描述
+
+=item 4 AUTHOR  作者的信息
+
+=back
+
+=head2  POD in PM example例子讲解
+
+package Win32::Registry; #code
+
+=head1 NAME    #pod
+
+Win32::Registry - accessing the Windows registry [obsolete, use Win32::TieRegistry]
+
+=head1 SYNOPSIS  
+
+    use Win32::Registry;
+    my $tips;
+    $::HKEY_LOCAL_MACHINE->Open("SOFTWARE\\Microsoft\\Windows"
+                               ."\\CurrentVersion\\Explorer\\Tips", $tips)
+        or die "Can't open tips: $^E";
+    my ($type, $value);
+    $tips->QueryValueEx("18", $type, $value) or die "No tip #18: $^E";
+    print "Here's a tip: $value\n";
+
+=head1 DESCRIPTION
+
+    NOTE: This module provides a very klunky interface to access the
+    Windows registry, and is not currently being developed actively.  It
+    only exists for backward compatibility with old code that uses it.
+    For more powerful and flexible ways to access the registry, use
+    Win32::TieRegistry.
+
+Win32::Registry provides an object oriented interface to the Windows
+Registry.
+
+The following "root" registry objects are exported to the main:: name
+space.  Additional keys must be opened by calling the provided methods
+on one of these.
+
+    $HKEY_CLASSES_ROOT
+    $HKEY_CURRENT_USER
+    $HKEY_LOCAL_MACHINE
+    $HKEY_USERS
+    $HKEY_PERFORMANCE_DATA
+    $HKEY_CURRENT_CONFIG
+    $HKEY_DYN_DATA
+
+=cut         #pod结束，准备进入代码
+
+use strict;
+require Exporter;
+require DynaLoader;
+use Win32::WinError;
+
+require Win32 unless defined &Win32::GetLastError;
+
+use vars qw($VERSION $AUTOLOAD @ISA @EXPORT @EXPORT_OK %EXPORT_TAGS);
+
+sub _new {
+    my $self;
+    if ($_[0]) {
+	$self->{'handle'} = $_[0];
+	bless $self;
+    }
+    $self;
+}
+
+=head2 Methods    #进入POD
+
+The following methods are supported.  Note that subkeys can be
+specified as a path name, separated by backslashes (which may
+need to be doubled if you put them in double quotes).
+
+=over 8 
+
+=item Open       #讲解第一个公共函数的用法
+
+    $reg_obj->Open($sub_key_name, $sub_reg_obj);
+
+Opens a subkey of a registry object, returning the new registry object
+in $sub_reg_obj.
+
+=cut            #结束pod， 进入代码
+
+sub Open {      #第一个公共函数的定义
+    my $self = shift;
+    die 'usage: $obj->Open($sub_key_name, $sub_reg_obj)' if @_ != 2;
+    
+    my ($subkey) = @_;
+    my ($result,$subhandle);
+
+    $result = RegOpenKey($self->{'handle'},$subkey,$subhandle);
+    $_[1] = _new($subhandle);
+    
+    return 0 unless $_[1];
+    $! = Win32::GetLastError() unless $result;
+    return $result;
+}
+
+=item Close      #进入POD讲解第二个公共函数Close
+
+    $reg_obj->Close();
+
+Closes an open registry key.
+
+=cut             #结束POD，进入代码
+
+sub Close {      #第二个公共函数的定义
+    my $self = shift;
+    die 'usage: $obj->Close()' if @_ != 0;
+
+    return unless exists $self->{'handle'};
+    my $result = RegCloseKey($self->{'handle'});
+    if ($result) {
+	delete $self->{'handle'};
+    }
+    else {
+	$! = Win32::GetLastError();
+    }
+    return $result;
+}
+
+=item Connect   #进入POD讲解第三个公共函数Close
+
+    $reg_obj->Connect($node_name, $new_reg_obj);
+
+Connects to a remote Registry on the node specified by $node_name,
+returning it in $new_reg_obj.  Returns false if it fails.
+
+=cut          #离开pod进入代码
+
+sub Connect {       #定义第3个公共函数
+    my $self = shift;
+    die 'usage: $obj->Connect($node_name, $new_reg_obj)' if @_ != 2;
+     
+    my ($node) = @_;
+    my ($result,$subhandle);
+
+    $result = RegConnectRegistry ($node, $self->{'handle'}, $subhandle);
+    $_[1] = _new($subhandle);
+
+    return 0 unless $_[1];
+    $! = Win32::GetLastError() unless $result;
+    return $result;
+}  
+
+1;
+
+__END__
+
+
+
