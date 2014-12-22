@@ -63,6 +63,6 @@
     my @getting = @urls.map: { client($_) };
     .content.say for await Promise.anyof( Promise.allof(@getting), Promise.in(5) );
 
-测试结果，在不到 4s 的时间内，可以完成 100 个请求。
+测试结果，在不到 4s 的时间内，可以完成 100 个请求。Perl6 依然任重道远。
 
 目前 Promise 只提供了 in, at, start, anyof, allof, then，keep, break 等方法。不过上面这个示例最大的问题在于，Perl6 虽然有默认并发数为 16 个线程，但是通过 map 生成 Promise 数组这步，并不是 lazy 的！所以 @urls 只消到几百个，就会出错了……
