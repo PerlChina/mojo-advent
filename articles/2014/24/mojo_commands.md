@@ -13,7 +13,8 @@ Mojolicious 是目前 Perl 社区最流行的 Web 开发框架。不过今天这
 1. 可以直接用原有的名字空间，`Mojolicious::Command::yoursubcmdname` 即可；
 2. 如果不想太过入侵，，那么类名就是 `Yourapp::Command::yoursubcmdname`，同时在 `Yourapp.pm` 的 startup 函数里加上这么一句：
 
-    push @{ $self->commands->namespaces }, 'KbnAuth::Command';
+
+    push @{ $self->commands->namespaces }, 'Yourapp::Command';
 
 这就是全部了。
 
