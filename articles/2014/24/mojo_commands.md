@@ -36,12 +36,10 @@ Mojolicious 是目前 Perl 社区最流行的 Web 开发框架。不过今天这
 
 然后测试运行：
 
-    $ ./script/yourapp -h | grep hello
-    ...
+    $ ./script/yourapp -h | grep -A1 -B1 hello
      get       Perform HTTP request.
      hello     hello world
      inflate   Inflate embedded files to real files.
-    ...
     $ ./script/yourapp hello -h
     usage: ./script/yourapp hello [name]
     $ ./script/yourapp hello
